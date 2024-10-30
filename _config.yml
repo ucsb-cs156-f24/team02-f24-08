@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f24/team02-f24-08
 owner: ucsb-cs156-f24
 repo_name: team02-f24-08
-pull_requests: []
+pull_requests: [{"author":{"id":"U_kgDOBcsiCw","is_bot":false,"login":"obenedek20","name":""},"headRefName":"Oscar-MenuItemFrontendBackend","number":62,"title":"Oscar - CRUD operations for MenuItemReview ported to team02","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/62"}]
