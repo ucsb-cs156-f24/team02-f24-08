@@ -132,9 +132,7 @@ function MenuItemReviewForm({
               id="comments"
               type="text"
               isInvalid={Boolean(errors.comments)}
-            //   {...register("comments", {
-            //     required: "comments are required.",
-            //   })} // comments should not be required, only stars
+              {...register("comments")} // comments should not be required, only stars
             />
             <Form.Control.Feedback type="invalid">
               {errors.comments?.message}
