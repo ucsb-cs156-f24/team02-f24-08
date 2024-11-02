@@ -27,27 +27,10 @@ describe("MenuItemReviewForm tests", () => {
         <MenuItemReviewForm initialContents={menuItemReviewFixtures.oneReview} />
       </Router>,
     );
-    await screen.findByTestId(/MenuItemReview-id/);
-    expect(screen.getByText(/Id/)).toBeInTheDocument();
+    await screen.findByTestId(/MenuItemReview-itemId/);
+    expect(screen.getByText(/Item Id/)).toBeInTheDocument();
     expect(screen.getByTestId(/MenuItemReview-id/)).toHaveValue("1");
   });
-
-//   test("Correct Error messsages on bad input", async () => {
-//     render(
-//       <Router>
-//         <MenuItemReviewForm />
-//       </Router>,
-//     );
-//     await screen.findByTestId("MenuItemReview-itemId");
-//     const dateReviewedField = screen.getByTestId("MenuItemReview-dateReviewed");
-//     const submitButton = screen.getByTestId("MenuItemReview-submit");
-
-//     fireEvent.change(dateReviewedField, { target: { value: "" } });
-//     fireEvent.click(submitButton);
-
-//     await screen.findByText(/dateReviewed is required. /);
-//   });
-// don't need because type validations take care of this? - no error messages
 
   test("Correct Error messsages on missing input", async () => {
     render(
