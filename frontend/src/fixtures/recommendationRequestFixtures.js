@@ -35,8 +35,8 @@ const recommendationRequestFixtures = {
             dateRequested: "2024-11-05T08:31:22",
             dateNeeded: "2025-01-27T12:00:00",
             done: false,
-        }
-    ]
+        },
+    ],
 };
 
 export { recommendationRequestFixtures };
