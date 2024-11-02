@@ -55,7 +55,7 @@ function MenuItemReviewForm({
               type="number"
               isInvalid={Boolean(errors.itemId)}
               {...register("itemId", {
-                required: true
+                required: true,
               })}
             />
             <Form.Control.Feedback type="invalid">
@@ -65,7 +65,9 @@ function MenuItemReviewForm({
         </Col>
         <Col>
           <Form.Group className="mb-3">
-            <Form.Label htmlFor="dateReviewed">Date Reviewed (iso format)</Form.Label>
+            <Form.Label htmlFor="dateReviewed">
+              Date Reviewed (iso format)
+            </Form.Label>
             <Form.Control
               data-testid="MenuItemReview-dateReviewed"
               id="dateReviewed"

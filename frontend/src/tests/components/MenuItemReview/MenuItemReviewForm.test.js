@@ -24,7 +24,9 @@ describe("MenuItemReviewForm tests", () => {
   test("renders correctly when passing in a MenuItemReview", async () => {
     render(
       <Router>
-        <MenuItemReviewForm initialContents={menuItemReviewFixtures.oneReview} />
+        <MenuItemReviewForm
+          initialContents={menuItemReviewFixtures.oneReview}
+        />
       </Router>,
     );
     await screen.findByTestId(/MenuItemReview-itemId/);
@@ -77,14 +79,12 @@ describe("MenuItemReviewForm tests", () => {
 
     await waitFor(() => expect(mockSubmitAction).toHaveBeenCalled());
 
-    expect(
-      screen.queryByText(/ItemId is required/),
-    ).not.toBeInTheDocument();
+    expect(screen.queryByText(/ItemId is required/)).not.toBeInTheDocument();
     expect(
       screen.queryByText(/dateReviewed must be in ISO format/),
     ).not.toBeInTheDocument();
     expect(
-        screen.queryByText(/comments are required./),
+      screen.queryByText(/comments are required./),
     ).not.toBeInTheDocument();
 
     //not null comments
@@ -99,14 +99,12 @@ describe("MenuItemReviewForm tests", () => {
 
     await waitFor(() => expect(mockSubmitAction).toHaveBeenCalled());
 
-    expect(
-      screen.queryByText(/ItemId is required/),
-    ).not.toBeInTheDocument();
+    expect(screen.queryByText(/ItemId is required/)).not.toBeInTheDocument();
     expect(
       screen.queryByText(/dateReviewed must be in ISO format/),
     ).not.toBeInTheDocument();
     expect(
-        screen.queryByText(/comments are required./),
+      screen.queryByText(/comments are required./),
     ).not.toBeInTheDocument();
   });
 
