@@ -6,7 +6,7 @@ const recommendationRequestFixtures = {
         explanation: "Grad school",
         dateRequested: "2024-11-02T12:23:00",
         dateNeeded: "2024-12-31T11:59:59",
-        done: false
+        done: false,
     },
     threeRequest: [
         {
@@ -16,7 +16,7 @@ const recommendationRequestFixtures = {
             explanation: "Internship",
             dateRequested: "2024-10-21T11:30:00",
             dateNeeded: "2024-12-24T11:59:59",
-            done: false
+            done: false,
         },
         {
             id: 2,
@@ -25,7 +25,7 @@ const recommendationRequestFixtures = {
             explanation: "Research lab",
             dateRequested: "2023-12-22T09:27:00",
             dateNeeded: "2024-02-28T11:59:59",
-            done: true
+            done: true,
         },
         {
             id: 3,
@@ -34,7 +34,7 @@ const recommendationRequestFixtures = {
             explanation: "Job application",
             dateRequested: "2024-11-05T08:31:22",
             dateNeeded: "2025-01-27T12:00:00",
-            done: false
+            done: false,
         }
     ]
 };
