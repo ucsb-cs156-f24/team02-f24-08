@@ -1,6 +1,6 @@
 import React from "react";
-import MenuItemReviewTable from '../../../main/components/MenuItemReview/MenuItemReviewTable';
-import {menuItemReviewFixtures} from '../../../fixtures/menuItemReviewFixtures';
+import MenuItemReviewTable from "../../../main/components/MenuItemReview/MenuItemReviewTable";
+import { menuItemReviewFixtures } from "../../../fixtures/menuItemReviewFixtures";
 import { currentUserFixtures } from "fixtures/currentUserFixtures";
 import { http, HttpResponse } from "msw";
 
