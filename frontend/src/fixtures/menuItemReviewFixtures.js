@@ -2,7 +2,7 @@ const menuItemReviewFixtures = {
   oneReview: {
     id: 1,
     itemId: 2,
-    reviewerEmail: "obenedek@ucsb.edu",
+    reviewerEmail: "sampleemail@ucsb.edu",
     stars: 3,
     dateReviewed: "2022-01-02T12:00:00",
     comments: "good",
