@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -164,13 +164,7 @@
 <a name='L99'></a><a href='#L99'>99</a>
 <a name='L100'></a><a href='#L100'>100</a>
 <a name='L101'></a><a href='#L101'>101</a>
-<a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L102'></a><a href='#L102'>102</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -184,13 +178,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -258,15 +252,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -281,27 +269,25 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 &nbsp;
-function <span class="fstat-no" title="function not covered" >UCSBDiningCommonsMenuItemForm(</span>{
+function UCSBDiningCommonsMenuItemForm({
   initialContents,
   submitAction,
-  buttonLabel = <span class="branch-0 cbranch-no" title="branch not covered" >"Create",</span>
+  buttonLabel = "Create",
 }) {
   //Stryker disable all
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = <span class="cstat-no" title="statement not covered" >useForm({</span>
-    defaultValues: initialContents || {},
-  });
+  } = useForm({defaultValues: initialContents || {} });
 &nbsp;
-  const navigate = <span class="cstat-no" title="statement not covered" >useNavigate();</span>
+  const navigate = useNavigate();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;Form onSubmite={handleSubmit(submitAction)}&gt;
+  return (
+    &lt;Form onSubmit={handleSubmit(submitAction)}&gt;
       &lt;Row&gt;
         {initialContents &amp;&amp; (
-          &lt;Col&gt;
+<span class="branch-1 cbranch-no" title="branch not covered" >          &lt;Col&gt;</span>
             &lt;Form.Group className="mb-3"&gt;
               &lt;Form.Label htmlFor="id"&gt;ID&lt;/Form.Label&gt;
               &lt;Form.Control
@@ -326,8 +312,6 @@ function <span class="fstat-no" title="function not covered" >UCSBDiningCommonsM
               id="diningCommonsCode"
               type="text"
               {...register("diningCommonsCode", { required: true })}
-              value={initialContents.diningCommonsCode}
-              disabled
             /&gt;
           &lt;/Form.Group&gt;
         &lt;/Col&gt;
@@ -339,8 +323,6 @@ function <span class="fstat-no" title="function not covered" >UCSBDiningCommonsM
               id="station"
               type="text"
               {...register("station", { required: true })}
-              value={initialContents.station}
-              disabled
             /&gt;
           &lt;/Form.Group&gt;
         &lt;/Col&gt;
@@ -355,8 +337,6 @@ function <span class="fstat-no" title="function not covered" >UCSBDiningCommonsM
               id="name"
               type="text"
               {...register("name", { required: true })}
-              value={initialContents.name}
-              disabled
             /&gt;
           &lt;/Form.Group&gt;
         &lt;/Col&gt;
@@ -372,11 +352,13 @@ function <span class="fstat-no" title="function not covered" >UCSBDiningCommonsM
           &lt;/Button&gt;
           &lt;Button
             variant="Secondary"
-            onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >              navigate(-1);</span>
+            onClick={() =&gt; {
+              navigate(-1);
             }}
             data-testid="UCSBDiningCommonsMenuItemForm-cancel"
-          &gt;&lt;/Button&gt;
+          &gt;
+            Cancel
+          &lt;/Button&gt;
         &lt;/Col&gt;
       &lt;/Row&gt;
     &lt;/Form&gt;
@@ -391,7 +373,7 @@ export default UCSBDiningCommonsMenuItemForm;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-03T23:10:00.007Z
+                at 2024-11-03T23:36:43.000Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
