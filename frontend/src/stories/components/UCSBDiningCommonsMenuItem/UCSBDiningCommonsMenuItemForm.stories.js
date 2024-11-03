@@ -1,9 +1,9 @@
 import React from "react";
-import UCSBDateForm from "main/components/UCSBDates/UCSBDateForm";
-import { ucsbDatesFixtures } from "fixtures/ucsbDatesFixtures";
+import UCSBDiningCommonsMenuItemForm from "main/components/UCSBDiningCommonsMenuItem/UCSBDiningCommonsMenuItemForm";
+import { UCSBDiningCommonsMenuItemForm } from "fixtures/ucsbDiningCommonsMenuItemFixtures";
 
 export default {
-  title: "comonents/UCSBDiningCommonsMenuItem/UCSBDiningCommonsMenuItemForm",
+  title: "components/UCSBDiningCommonsMenuItem/UCSBDiningCommonsMenuItemForm",
   component: UCSBDiningCommonsMenuItemForm,
 };
 

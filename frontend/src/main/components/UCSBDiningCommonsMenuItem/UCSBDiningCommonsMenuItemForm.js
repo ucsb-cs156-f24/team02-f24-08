@@ -12,14 +12,12 @@ function UCSBDiningCommonsMenuItemForm({
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm({
-    defaultValues: initialContents || {},
-  });
+  } = useForm({defaultValues: initialContents || {} });
 
   const navigate = useNavigate();
 
   return (
-    <Form onSubmite={handleSubmit(submitAction)}>
+    <Form onSubmit={handleSubmit(submitAction)}>
       <Row>
         {initialContents && (
           <Col>
@@ -47,8 +45,6 @@ function UCSBDiningCommonsMenuItemForm({
               id="diningCommonsCode"
               type="text"
               {...register("diningCommonsCode", { required: true })}
-              value={initialContents.diningCommonsCode}
-              disabled
             />
           </Form.Group>
         </Col>
@@ -60,8 +56,6 @@ function UCSBDiningCommonsMenuItemForm({
               id="station"
               type="text"
               {...register("station", { required: true })}
-              value={initialContents.station}
-              disabled
             />
           </Form.Group>
         </Col>
@@ -76,8 +70,6 @@ function UCSBDiningCommonsMenuItemForm({
               id="name"
               type="text"
               {...register("name", { required: true })}
-              value={initialContents.name}
-              disabled
             />
           </Form.Group>
         </Col>
@@ -97,7 +89,9 @@ function UCSBDiningCommonsMenuItemForm({
               navigate(-1);
             }}
             data-testid="UCSBDiningCommonsMenuItemForm-cancel"
-          ></Button>
+          >
+            Cancel
+          </Button>
         </Col>
       </Row>
     </Form>
