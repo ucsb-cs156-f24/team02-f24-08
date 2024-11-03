@@ -26,7 +26,7 @@ describe("UCSBDateForm tests", () => {
       <Router>
         <UCSBDiningCommonsMenuItemForm
           initialContents={
-            ucsbDiningCommonsMenuItemFixtures.oneDiningCommonsMenuItem
+            ucsbDiningCommonsMenuItemFixtures.oneDCMI
           }
         />
       </Router>,

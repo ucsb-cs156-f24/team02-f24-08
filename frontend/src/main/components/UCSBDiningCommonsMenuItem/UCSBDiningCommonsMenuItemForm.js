@@ -10,7 +10,6 @@ function UCSBDiningCommonsMenuItemForm({
   //Stryker disable all
   const {
     register,
-    formState: { errors },
     handleSubmit,
   } = useForm({defaultValues: initialContents || {} });
 
