@@ -53,6 +53,7 @@ function MenuItemReviewForm({
               data-testid="MenuItemReview-itemId"
               id="itemId"
               type="number"
+              min="0"
               isInvalid={Boolean(errors.itemId)}
               {...register("itemId", {
                 required: true,
@@ -108,11 +109,13 @@ function MenuItemReviewForm({
       <Row>
         <Col>
           <Form.Group className="mb-3">
-            <Form.Label htmlFor="stars">Stars</Form.Label>
+            <Form.Label htmlFor="stars">Stars (Up to 5)</Form.Label>
             <Form.Control
               data-testid="MenuItemReview-stars"
               id="stars"
               type="number"
+              min="0"
+              max="5"
               isInvalid={Boolean(errors.stars)}
               {...register("stars", {
                 required: "stars is required.",
