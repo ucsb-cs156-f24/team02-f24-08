@@ -240,7 +240,13 @@
 <a name='L175'></a><a href='#L175'>175</a>
 <a name='L176'></a><a href='#L176'>176</a>
 <a name='L177'></a><a href='#L177'>177</a>
-<a name='L178'></a><a href='#L178'>178</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -268,6 +274,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -417,6 +428,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Button, Form, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -444,7 +456,7 @@ function RecommendationRequestForm({
     /(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d)/i;
   // Stryker restore Regex
 &nbsp;
-  return(
+  return (
     &lt;Form onSubmit={handleSubmit(submitAction)}&gt;
       &lt;Row&gt;
         {initialContents &amp;&amp; (
@@ -469,7 +481,7 @@ function RecommendationRequestForm({
             &lt;Form.Control
               data-testid="RecommendationRequestForm-requesterEmail"
               id="requesterEmail"
-              type="text"
+              type="email"
               isInvalid={Boolean(errors.requesterEmail)}
               {...register("requesterEmail", {
                 required: "Requester Email is required.",
@@ -486,7 +498,7 @@ function RecommendationRequestForm({
             &lt;Form.Control
               data-testid="RecommendationRequestForm-professorEmail"
               id="professorEmail"
-              type="text"
+              type="email"
               isInvalid={Boolean(errors.professorEmail)}
               {...register("professorEmail", {
                 required: "Professor Email is required.",
@@ -516,13 +528,15 @@ function RecommendationRequestForm({
               {errors.explanation?.message}
             &lt;/Form.Control.Feedback&gt;
           &lt;/Form.Group&gt;
-        &lt;/Col&gt; 
+        &lt;/Col&gt;
       &lt;/Row&gt;
 &nbsp;
       &lt;Row&gt;
         &lt;Col&gt;
           &lt;Form.Group className="mb-3"&gt;
-            &lt;Form.Label htmlFor="dateRequested"&gt;Date Requested (iso format)&lt;/Form.Label&gt;
+            &lt;Form.Label htmlFor="dateRequested"&gt;
+              Date Requested (iso format)
+            &lt;/Form.Label&gt;
             &lt;Form.Control
               data-testid="RecommendationRequestForm-dateRequested"
               id="dateRequested"
@@ -541,7 +555,9 @@ function RecommendationRequestForm({
 &nbsp;
         &lt;Col&gt;
           &lt;Form.Group className="mb-3"&gt;
-            &lt;Form.Label htmlFor="dateNeeded"&gt;Date Needed (iso format)&lt;/Form.Label&gt;
+            &lt;Form.Label htmlFor="dateNeeded"&gt;
+              Date Needed (iso format)
+            &lt;/Form.Label&gt;
             &lt;Form.Control
               data-testid="RecommendationRequestForm-dateNeeded"
               id="dateNeeded"
@@ -561,18 +577,19 @@ function RecommendationRequestForm({
 &nbsp;
       &lt;Row&gt;
         &lt;Col&gt;
-            &lt;Form.Group className="mb-3"&gt;
-              &lt;Form.Label htmlFor="done"&gt;Done&lt;/Form.Label&gt;
-              &lt;Form.Select
-                data-testid="RecommendationRequestForm-done"
-                id="done"
-                type="string"
-                isInvalid={Boolean(errors.done)}
-                {...register("done")}&gt;
-                &lt;option value="false"&gt;False&lt;/option&gt;
-                &lt;option value="true"&gt;True&lt;/option&gt;
-              &lt;/Form.Select&gt;
-            &lt;/Form.Group&gt;
+          &lt;Form.Group className="mb-3"&gt;
+            &lt;Form.Label htmlFor="done"&gt;Done&lt;/Form.Label&gt;
+            &lt;Form.Select
+              data-testid="RecommendationRequestForm-done"
+              id="done"
+              type="string"
+              isInvalid={Boolean(errors.done)}
+              {...register("done")}
+            &gt;
+              &lt;option value="false"&gt;False&lt;/option&gt;
+              &lt;option value="true"&gt;True&lt;/option&gt;
+            &lt;/Form.Select&gt;
+          &lt;/Form.Group&gt;
         &lt;/Col&gt;
       &lt;/Row&gt;
 &nbsp;
@@ -594,14 +611,15 @@ function RecommendationRequestForm({
   );
 }
 &nbsp;
-export default RecommendationRequestForm;</pre></td></tr></table></pre>
+export default RecommendationRequestForm;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-04T21:27:37.753Z
+                at 2024-11-04T22:02:27.935Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
