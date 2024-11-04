@@ -50,8 +50,8 @@ describe("UCSBDiningCommonsMenuItem tests", () => {
     fireEvent.click(submitButton);
 
     await screen.findByText(/DiningCommonsCode is required/);
-    expect(screen.findByText(/Station is required/)).toBeInTheDocument();
-    expect(screen.findByText(/Name is required/)).toBeInTheDocument();
+    expect(screen.getByText(/Station is required/)).toBeInTheDocument();
+    expect(screen.getByText(/Name is required/)).toBeInTheDocument();
   });
 
   test("No Error messsages on correct input", async () => {
@@ -87,12 +87,12 @@ describe("UCSBDiningCommonsMenuItem tests", () => {
     });
 
     expect(
-      await screen.findByText(/DiningCommonsCode is required/),
+      screen.queryByText(/DiningCommonsCode is required/),
     ).not.toBeInTheDocument();
     expect(
-      await screen.findByText(/Station is required/),
+      screen.queryByText(/Station is required/),
     ).not.toBeInTheDocument();
-    expect(await screen.findByText(/Name is required/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Name is required/)).not.toBeInTheDocument();
   });
 
   test("that the cancel button works", async () => {
