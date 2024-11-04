@@ -1,4 +1,3 @@
-
 title: Documentation
 description: >- # this means to ignore newlines until "baseurl:"
   When reviewing a PR for this repo, you can see what the documentation,
@@ -18,9 +17,7 @@ collections:
     permalink: /branches/:path/
 
 repo_name: "TBD"
-
-
 repo: ucsb-cs156-f24/team02-f24-08
 owner: ucsb-cs156-f24
 repo_name: team02-f24-08
-pull_requests: [{"author":{"id":"MDQ6VXNlcjY4MDg2NzYw","is_bot":false,"login":"yw2398","name":"Amber Wang"},"headRefName":"aw-UCSBOrgs-backend","number":78,"title":"aw-copy over backend files","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/78"},{"author":{"id":"U_kgDOBcsiCw","is_bot":false,"login":"obenedek20","name":""},"headRefName":"Oscar-CreatePage","number":77,"title":"Oscar - Create Page fully functional for MenuItemReview","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/77"},{"author":{"id":"U_kgDOBcsiCw","is_bot":false,"login":"obenedek20","name":""},"headRefName":"Oscar-EditCreatePages","number":75,"title":"Oscar - Added Placeholder Create and Edit Pages","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/75"},{"author":{"id":"U_kgDOBcsiCw","is_bot":false,"login":"obenedek20","name":""},"headRefName":"Oscar-MenuItemTable","number":73,"title":"Oscar - MenuItemReview now has table component, tests","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/73"},{"author":{"id":"MDQ6VXNlcjUzMjc5MDkx","is_bot":false,"login":"qwistaycat","name":"Christy Yu"},"headRefName":"cy-Articles-backend","number":67,"title":"added Articles backend files","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/67"}]
+pull_requests: [{"author":{"id":"MDQ6VXNlcjY4MDg2NzYw","is_bot":false,"login":"yw2398","name":"Amber Wang"},"headRefName":"AW-create-fixtures","number":79,"title":"AW-create fixtures for UCSB Orgs","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/79"},{"author":{"id":"MDQ6VXNlcjY4MDg2NzYw","is_bot":false,"login":"yw2398","name":"Amber Wang"},"headRefName":"aw-UCSBOrgs-backend","number":78,"title":"AW-copy over backend files","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/78"},{"author":{"id":"U_kgDOBcsiCw","is_bot":false,"login":"obenedek20","name":""},"headRefName":"Oscar-CreatePage","number":77,"title":"Oscar - Create Page fully functional for MenuItemReview","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/77"},{"author":{"id":"U_kgDOBcsiCw","is_bot":false,"login":"obenedek20","name":""},"headRefName":"Oscar-EditCreatePages","number":75,"title":"Oscar - Added Placeholder Create and Edit Pages","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/75"},{"author":{"id":"U_kgDOBcsiCw","is_bot":false,"login":"obenedek20","name":""},"headRefName":"Oscar-MenuItemTable","number":73,"title":"Oscar - MenuItemReview now has table component, tests","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/73"},{"author":{"id":"MDQ6VXNlcjUzMjc5MDkx","is_bot":false,"login":"qwistaycat","name":"Christy Yu"},"headRefName":"cy-Articles-backend","number":67,"title":"added Articles backend files","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/67"}]
