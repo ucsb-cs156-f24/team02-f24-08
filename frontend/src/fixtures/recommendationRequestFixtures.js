@@ -6,7 +6,7 @@ const recommendationRequestFixtures = {
     explanation: "Grad school",
     dateRequested: "2024-11-02T12:23:00",
     dateNeeded: "2024-12-31T11:59:59",
-    done: false,
+    done: true,
   },
   threeRequest: [
     {

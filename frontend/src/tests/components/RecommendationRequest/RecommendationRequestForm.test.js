@@ -77,7 +77,7 @@ describe("RecommendationRequestForm tests", () => {
       fireEvent.change(dateNeededField, {
           target: { value: "2024-12-31T11:59" },
         });
-      fireEvent.change(doneField, { target: { value: "false" }});
+      fireEvent.change(doneField, { target: { value: "true" }});
       fireEvent.click(submitButton);
 
       await waitFor(() => expect(mockSubmitAction).toHaveBeenCalled());
