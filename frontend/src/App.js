@@ -124,6 +124,28 @@ function App() {
             />
           </>
         )}
+        {hasRole(currentUser, "ROLE_ADMIN") && (
+          <Route exact path="/admin/users" element={<AdminUsersPage />} />
+        )}
+        {hasRole(currentUser, "ROLE_USER") && (
+          <>
+            <Route exact path="/ucsbDiningCommonsMenuItem" element={<UCSBDiningCommonsMenuItemIndexPage />} />
+          </>
+        )}
+        {hasRole(currentUser, "ROLE_ADMIN") && (
+          <>
+            <Route
+              exact
+              path="/ucsbDiningCommonsMenuItem/edit/:id"
+              element={<UCSBDiningCommonsMenuItemEditPage />}
+            />
+            <Route
+              exact
+              path="/ucsbDiningCommonsMenuItem/create"
+              element={<UCSBDiningCommonsMenuItemCreatePage />}
+            />
+          </>
+        )}
       </Routes>
     </BrowserRouter>
   );
