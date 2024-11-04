@@ -149,9 +149,7 @@ function RecommendationRequestForm({
                 id="done"
                 type="string"
                 isInvalid={Boolean(errors.done)}
-                {...register("done", {
-                  required: "Done status is required."
-                })}>
+                {...register("done")}>
                 <option value="false">False</option>
                 <option value="true">True</option>
               </Form.Select>
