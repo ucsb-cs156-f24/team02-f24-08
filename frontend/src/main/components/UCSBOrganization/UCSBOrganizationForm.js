@@ -29,17 +29,20 @@ function UCSBOrganizationForm({
             id="orgCode"
             type="text"
             isInvalid={Boolean(errors.orgCode)}
-            {...register("orgCode", {required: "Organization Code is required.",})}
-
-        />
-            <Form.Control.Feedback type="invalid">
-                {errors.orgCode?.message}
-            </Form.Control.Feedback>
+            {...register("orgCode", {
+              required: "Organization Code is required.",
+            })}
+          />
+          <Form.Control.Feedback type="invalid">
+            {errors.orgCode?.message}
+          </Form.Control.Feedback>
         </Form.Group>
       )}
 
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="orgTranslationShort">Organization Translation Short</Form.Label>
+        <Form.Label htmlFor="orgTranslationShort">
+          Organization Translation Short
+        </Form.Label>
         <Form.Control
           data-testid={testIdPrefix + "-orgTranslationShort"}
           id="orgTranslationShort"
@@ -59,7 +62,9 @@ function UCSBOrganizationForm({
       </Form.Group>
 
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="orgTranslation">Organization Translation</Form.Label>
+        <Form.Label htmlFor="orgTranslation">
+          Organization Translation
+        </Form.Label>
         <Form.Control
           data-testid={testIdPrefix + "-orgTranslation"}
           id="orgTranslation"
@@ -73,7 +78,6 @@ function UCSBOrganizationForm({
           {errors.orgTranslation?.message}
         </Form.Control.Feedback>
       </Form.Group>
-
 
       <Form.Group className="mb-3">
         <Form.Label htmlFor="inactive">Inactive</Form.Label>
@@ -100,4 +104,4 @@ function UCSBOrganizationForm({
   );
 }
 
-export default RestaurantForm;
+export default UCSBOrganizationForm;
