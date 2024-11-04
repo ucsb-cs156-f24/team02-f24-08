@@ -89,9 +89,7 @@ describe("UCSBDiningCommonsMenuItem tests", () => {
     expect(
       screen.queryByText(/DiningCommonsCode is required/),
     ).not.toBeInTheDocument();
-    expect(
-      screen.queryByText(/Station is required/),
-    ).not.toBeInTheDocument();
+    expect(screen.queryByText(/Station is required/)).not.toBeInTheDocument();
     expect(screen.queryByText(/Name is required/)).not.toBeInTheDocument();
   });
 
