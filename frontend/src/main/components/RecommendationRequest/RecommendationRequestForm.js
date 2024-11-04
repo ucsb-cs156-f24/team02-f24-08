@@ -50,7 +50,7 @@ function RecommendationRequestForm({
             <Form.Control
               data-testid="RecommendationRequestForm-requesterEmail"
               id="requesterEmail"
-              type="text"
+              type="email"
               isInvalid={Boolean(errors.requesterEmail)}
               {...register("requesterEmail", {
                 required: "Requester Email is required.",
@@ -67,7 +67,7 @@ function RecommendationRequestForm({
             <Form.Control
               data-testid="RecommendationRequestForm-professorEmail"
               id="professorEmail"
-              type="text"
+              type="email"
               isInvalid={Boolean(errors.professorEmail)}
               {...register("professorEmail", {
                 required: "Professor Email is required.",
