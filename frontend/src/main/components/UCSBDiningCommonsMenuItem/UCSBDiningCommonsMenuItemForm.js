@@ -10,8 +10,11 @@ function UCSBDiningCommonsMenuItemForm({
   //Stryker disable all
   const {
     register,
+    formState: { errors },
     handleSubmit,
-  } = useForm({defaultValues: initialContents || {} });
+  } = useForm({
+    defaultValues: initialContents || {},
+  });
 
   const navigate = useNavigate();
 
@@ -43,8 +46,12 @@ function UCSBDiningCommonsMenuItemForm({
               data-testid="UCSBDiningCommonsMenuItemForm-diningCommonsCode"
               id="diningCommonsCode"
               type="text"
+              isInvalid={Boolean(errors.diningCommonsCode)}
               {...register("diningCommonsCode", { required: true })}
             />
+            <Form.Control.Feedback type="invalid">
+              {errors.diningCommonsCode && "DiningCommonsCode is required"}
+            </Form.Control.Feedback>
           </Form.Group>
         </Col>
         <Col>
@@ -54,8 +61,12 @@ function UCSBDiningCommonsMenuItemForm({
               data-testid="UCSBDiningCommonsMenuItemForm-station"
               id="station"
               type="text"
+              isInvalid={Boolean(errors.station)}
               {...register("station", { required: true })}
             />
+            <Form.Control.Feedback type="invalid">
+              {errors.station && "Station is required"}
+            </Form.Control.Feedback>
           </Form.Group>
         </Col>
       </Row>
@@ -68,8 +79,12 @@ function UCSBDiningCommonsMenuItemForm({
               data-testid="UCSBDiningCommonsMenuItemForm-name"
               id="name"
               type="text"
+              isInvalid={Boolean(errors.name)}
               {...register("name", { required: true })}
             />
+            <Form.Control.Feedback type="invalid">
+              {errors.name && "Name is required"}
+            </Form.Control.Feedback>
           </Form.Group>
         </Col>
       </Row>

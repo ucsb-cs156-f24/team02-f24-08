@@ -10,11 +10,11 @@ jest.mock("react-router-dom", () => ({
   useNavigate: () => mockedNavigate,
 }));
 
-describe("UCSBDateForm tests", () => {
+describe("UCSBDiningCommonsMenuItem tests", () => {
   test("renders correctly", async () => {
     render(
       <Router>
-        <UCSBDateForm />
+        <UCSBDiningCommonsMenuItemForm />
       </Router>,
     );
     await screen.findByText(/Dining Commons Code/);
@@ -25,9 +25,7 @@ describe("UCSBDateForm tests", () => {
     render(
       <Router>
         <UCSBDiningCommonsMenuItemForm
-          initialContents={
-            ucsbDiningCommonsMenuItemFixtures.oneDCMI
-          }
+          initialContents={ucsbDiningCommonsMenuItemFixtures.oneDCMI}
         />
       </Router>,
     );
@@ -51,7 +49,7 @@ describe("UCSBDateForm tests", () => {
 
     fireEvent.click(submitButton);
 
-    await screen.findByText(/Dining Commons Code is Required/);
+    await screen.findByText(/DiningCommonsCode is required/);
     expect(screen.findByText(/Station is required/)).toBeInTheDocument();
     expect(screen.findByText(/Name is required/)).toBeInTheDocument();
   });
@@ -89,7 +87,7 @@ describe("UCSBDateForm tests", () => {
     });
 
     expect(
-      await screen.findByText(/Dining Commons Code is Required/),
+      await screen.findByText(/DiningCommonsCode is required/),
     ).not.toBeInTheDocument();
     expect(
       await screen.findByText(/Station is required/),
