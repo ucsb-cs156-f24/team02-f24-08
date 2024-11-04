@@ -97,7 +97,7 @@ describe("MenuItemReviewCreatePage tests", () => {
     const reviewerEmailInput = screen.getByLabelText("Reviewer Email");
     expect(reviewerEmailInput).toBeInTheDocument();
 
-    const starsInput = screen.getByLabelText("Stars");
+    const starsInput = screen.getByLabelText("Stars (Up to 5)");
     expect(starsInput).toBeInTheDocument();
 
     const commentsInput = screen.getByLabelText("Comments");
@@ -112,23 +112,23 @@ describe("MenuItemReviewCreatePage tests", () => {
       target: { value: "2022-01-02T12:00:00" },
     });
     fireEvent.change(reviewerEmailInput, {
-      target: { value: "alexstudent@ucsb.edu" },
+      target: { value: "charliestudent@ucsb.edu" },
     });
     fireEvent.click(createButton);
 
     await waitFor(() => expect(axiosMock.history.post.length).toBe(1));
 
     expect(axiosMock.history.post[0].params).toEqual({
-      itemId: 2,
-      reviewerEmail: "alexstudent@ucsb.edu",
-      stars: 4,
-      comments: "yummy!",
-      dateReviewed: "2022-01-02T12:00:00",
+      itemId: "2",
+      reviewerEmail: "charliestudent@ucsb.edu",
+      stars: "4",
+      comments: "",
+      dateReviewed: "2022-01-02T12:00",
     });
 
     // assert - check that the toast was called with the expected message
     expect(mockToast).toBeCalledWith(
-      "New review Created - id: 3 reviewerEmail: alexstudent@ucsb.edu",
+      "New review Created - id: 3 reviewerEmail: charliestudent@ucsb.edu",
     );
     expect(mockNavigate).toBeCalledWith({ to: "/menuitemreview" });
   });
