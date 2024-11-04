@@ -25,7 +25,7 @@ function RecommendationRequestForm({
     /(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d)/i;
   // Stryker restore Regex
 
-  return(
+  return (
     <Form onSubmit={handleSubmit(submitAction)}>
       <Row>
         {initialContents && (
@@ -97,13 +97,15 @@ function RecommendationRequestForm({
               {errors.explanation?.message}
             </Form.Control.Feedback>
           </Form.Group>
-        </Col> 
+        </Col>
       </Row>
 
       <Row>
         <Col>
           <Form.Group className="mb-3">
-            <Form.Label htmlFor="dateRequested">Date Requested (iso format)</Form.Label>
+            <Form.Label htmlFor="dateRequested">
+              Date Requested (iso format)
+            </Form.Label>
             <Form.Control
               data-testid="RecommendationRequestForm-dateRequested"
               id="dateRequested"
@@ -122,7 +124,9 @@ function RecommendationRequestForm({
 
         <Col>
           <Form.Group className="mb-3">
-            <Form.Label htmlFor="dateNeeded">Date Needed (iso format)</Form.Label>
+            <Form.Label htmlFor="dateNeeded">
+              Date Needed (iso format)
+            </Form.Label>
             <Form.Control
               data-testid="RecommendationRequestForm-dateNeeded"
               id="dateNeeded"
@@ -142,18 +146,19 @@ function RecommendationRequestForm({
 
       <Row>
         <Col>
-            <Form.Group className="mb-3">
-              <Form.Label htmlFor="done">Done</Form.Label>
-              <Form.Select
-                data-testid="RecommendationRequestForm-done"
-                id="done"
-                type="string"
-                isInvalid={Boolean(errors.done)}
-                {...register("done")}>
-                <option value="false">False</option>
-                <option value="true">True</option>
-              </Form.Select>
-            </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label htmlFor="done">Done</Form.Label>
+            <Form.Select
+              data-testid="RecommendationRequestForm-done"
+              id="done"
+              type="string"
+              isInvalid={Boolean(errors.done)}
+              {...register("done")}
+            >
+              <option value="false">False</option>
+              <option value="true">True</option>
+            </Form.Select>
+          </Form.Group>
         </Col>
       </Row>
 
