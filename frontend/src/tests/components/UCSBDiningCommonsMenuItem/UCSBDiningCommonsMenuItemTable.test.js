@@ -24,7 +24,7 @@ describe("UserTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <UCSBDiningCommonsMenuItemTable
-            dates={ucsbDiningCommonsMenuItemFixtures.threeDCMI}
+            diningCommonsMenuItem={ucsbDiningCommonsMenuItemFixtures.threeDCMI}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -70,7 +70,7 @@ describe("UserTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <UCSBDiningCommonsMenuItemTable
-            dates={ucsbDiningCommonsMenuItemFixtures.threeDCMI}
+            diningCommonsMenuItem={ucsbDiningCommonsMenuItemFixtures.threeDCMI}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -118,7 +118,7 @@ describe("UserTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <UCSBDiningCommonsMenuItemTable
-            dates={ucsbDiningCommonsMenuItemFixtures.threeDCMI}
+            diningCommonsMenuItem={ucsbDiningCommonsMenuItemFixtures.threeDCMI}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -127,12 +127,12 @@ describe("UserTable tests", () => {
 
     await waitFor(() => {
       expect(
-        screen.getByTestId(`UCSBDiningCommonsMenuItem-cell-row-0-col-id`),
+        screen.getByTestId(`UCSBDiningCommonsMenuItemTable-cell-row-0-col-id`),
       ).toHaveTextContent("1");
     });
 
     const editButton = screen.getByTestId(
-      `UCSBDiningCommonsMenuItem-cell-row-0-col-Edit-button`,
+      `UCSBDiningCommonsMenuItemTable-cell-row-0-col-Edit-button`,
     );
     expect(editButton).toBeInTheDocument();
 
@@ -148,18 +148,19 @@ describe("UserTable tests", () => {
   test("Delete button calls delete callback", async () => {
     // arrange
     const currentUser = currentUserFixtures.adminUser;
+    jest.spyOn(console, "log"); // Mock console.log
 
     const axiosMock = new AxiosMockAdapter(axios);
     axiosMock
       .onDelete("/api/ucsbDiningCommonsMenuItem")
-      .reply(200, { message: "DiningCommonsMenuitem deleted" });
+      .reply(200, { message: "DiningCommonsMenuItem deleted" });
 
     // act - render the component
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <UCSBDiningCommonsMenuItemTable
-            dates={ucsbDiningCommonsMenuItemFixtures.threeDCMI}
+            diningCommonsMenuItem={ucsbDiningCommonsMenuItemFixtures.threeDCMI}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -170,12 +171,12 @@ describe("UserTable tests", () => {
 
     await waitFor(() => {
       expect(
-        screen.getByTestId(`UCSBDiningCommonsMenuItem-cell-row-0-col-id`),
+        screen.getByTestId(`UCSBDiningCommonsMenuItemTable-cell-row-0-col-id`),
       ).toHaveTextContent("1");
     });
 
     const deleteButton = screen.getByTestId(
-      `UCSBDiningCommonsMenuItem-cell-row-0-col-Delete-button`,
+      `UCSBDiningCommonsMenuItemTable-cell-row-0-col-Delete-button`,
     );
     expect(deleteButton).toBeInTheDocument();
 
@@ -186,5 +187,11 @@ describe("UserTable tests", () => {
 
     await waitFor(() => expect(axiosMock.history.delete.length).toBe(1));
     expect(axiosMock.history.delete[0].params).toEqual({ id: 1 });
+
+    expect(axiosMock.history.delete[0].params.id).toBe(1);
+
+    expect(console.log).toHaveBeenCalledWith({
+      message: "DiningCommonsMenuItem deleted",
+    });
   });
 });
