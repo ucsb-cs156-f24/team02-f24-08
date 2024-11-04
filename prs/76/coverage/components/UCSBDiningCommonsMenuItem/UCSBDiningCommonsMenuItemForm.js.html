@@ -32,7 +32,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -163,7 +163,22 @@
 <a name='L98'></a><a href='#L98'>98</a>
 <a name='L99'></a><a href='#L99'>99</a>
 <a name='L100'></a><a href='#L100'>100</a>
-<a name='L101'></a><a href='#L101'>101</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -176,11 +191,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -275,8 +305,11 @@ function UCSBDiningCommonsMenuItemForm({
   //Stryker disable all
   const {
     register,
+    formState: { errors },
     handleSubmit,
-  } = useForm({defaultValues: initialContents || {} });
+  } = useForm({
+    defaultValues: initialContents || {},
+  });
 &nbsp;
   const navigate = useNavigate();
 &nbsp;
@@ -308,8 +341,12 @@ function UCSBDiningCommonsMenuItemForm({
               data-testid="UCSBDiningCommonsMenuItemForm-diningCommonsCode"
               id="diningCommonsCode"
               type="text"
+              isInvalid={Boolean(errors.diningCommonsCode)}
               {...register("diningCommonsCode", { required: true })}
             /&gt;
+            &lt;Form.Control.Feedback type="invalid"&gt;
+              {errors.diningCommonsCode &amp;&amp; "DiningCommonsCode is required"}
+            &lt;/Form.Control.Feedback&gt;
           &lt;/Form.Group&gt;
         &lt;/Col&gt;
         &lt;Col&gt;
@@ -319,8 +356,12 @@ function UCSBDiningCommonsMenuItemForm({
               data-testid="UCSBDiningCommonsMenuItemForm-station"
               id="station"
               type="text"
+              isInvalid={Boolean(errors.station)}
               {...register("station", { required: true })}
             /&gt;
+            &lt;Form.Control.Feedback type="invalid"&gt;
+              {errors.station &amp;&amp; "Station is required"}
+            &lt;/Form.Control.Feedback&gt;
           &lt;/Form.Group&gt;
         &lt;/Col&gt;
       &lt;/Row&gt;
@@ -333,8 +374,12 @@ function UCSBDiningCommonsMenuItemForm({
               data-testid="UCSBDiningCommonsMenuItemForm-name"
               id="name"
               type="text"
+              isInvalid={Boolean(errors.name)}
               {...register("name", { required: true })}
             /&gt;
+            &lt;Form.Control.Feedback type="invalid"&gt;
+              {errors.name &amp;&amp; "Name is required"}
+            &lt;/Form.Control.Feedback&gt;
           &lt;/Form.Group&gt;
         &lt;/Col&gt;
       &lt;/Row&gt;
@@ -370,7 +415,7 @@ export default UCSBDiningCommonsMenuItemForm;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-03T23:49:56.353Z
+                at 2024-11-04T00:10:40.474Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
