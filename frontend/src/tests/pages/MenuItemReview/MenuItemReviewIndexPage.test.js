@@ -95,15 +95,15 @@ describe("MenuItemReviewIndexPage tests", () => {
       "2",
     );
 
-    const createMenuItemReviewButton = screen.queryByText("Create MenuItemReview");
+    const createMenuItemReviewButton = screen.queryByText(
+      "Create MenuItemReview",
+    );
     expect(createMenuItemReviewButton).not.toBeInTheDocument();
 
     const reviewerEmail = screen.getByText("obenedek@ucsb.edu");
     expect(reviewerEmail).toBeInTheDocument();
 
-    const comments = screen.getByText(
-      "good",
-    );
+    const comments = screen.getByText("good");
     expect(comments).toBeInTheDocument();
 
     // for non-admin users, details button is visible, but the edit and delete buttons should not be visible
