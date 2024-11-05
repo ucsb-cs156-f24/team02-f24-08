@@ -85,30 +85,71 @@ describe("ArticlesForm tests", () => {
     const submitButton = screen.getByText(/Create/);
     fireEvent.click(submitButton);
 
-    await screen.findByText(/Name is required/);
-    expect(screen.getByText(/URL is required/)).toBeInTheDocument();
-    expect(screen.getByText(/Explanation is required/)).toBeInTheDocument();
-    expect(screen.getByText(/Email is required/)).toBeInTheDocument();
-    expect(screen.getByText(/Date is required/)).toBeInTheDocument();
+    expect(await screen.findByText(/Name is required/)).toBeInTheDocument();
+    expect(await screen.findByText(/URL is required/)).toBeInTheDocument();
+    expect(
+      await screen.findByText(/Explanation is required/)
+    ).toBeInTheDocument();
+    expect(await screen.findByText(/Email is required/)).toBeInTheDocument();
+    expect(await screen.findByText(/Date is required/)).toBeInTheDocument();
+  });
+
+  test("that name length validation works", async () => {
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <ArticlesForm />
+        </Router>
+      </QueryClientProvider>
+    );
 
     const nameInput = screen.getByTestId(`${testId}-name`);
-    const urlInput = screen.getByTestId(`${testId}-url`);
-    const emailInput = screen.getByTestId(`${testId}-email`);
-
     fireEvent.change(nameInput, { target: { value: "a".repeat(101) } });
-    fireEvent.change(urlInput, { target: { value: "not-a-url" } });
-    fireEvent.change(emailInput, { target: { value: "not-an-email" } });
-
+    const submitButton = screen.getByText(/Create/);
     fireEvent.click(submitButton);
 
-    await waitFor(() => {
-      expect(screen.getByText(/Max length 100 characters/)).toBeInTheDocument();
-      expect(
-        screen.getByText(
-          /Must be a valid URL starting with http:\/\/ or https:\/\//
-        )
-      ).toBeInTheDocument();
-      expect(screen.getByText(/Invalid email address/)).toBeInTheDocument();
-    });
+    expect(
+      await screen.findByText(/Max length 100 characters/)
+    ).toBeInTheDocument();
+  });
+
+  test("that url format validation works", async () => {
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <ArticlesForm />
+        </Router>
+      </QueryClientProvider>
+    );
+
+    const urlInput = screen.getByTestId(`${testId}-url`);
+    fireEvent.change(urlInput, { target: { value: "not-a-url" } });
+    const submitButton = screen.getByText(/Create/);
+    fireEvent.click(submitButton);
+
+    expect(
+      await screen.findByText(
+        /Must be a valid URL starting with http:\/\/ or https:\/\//
+      )
+    ).toBeInTheDocument();
+  });
+
+  test("that email format validation works", async () => {
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <ArticlesForm />
+        </Router>
+      </QueryClientProvider>
+    );
+
+    const emailInput = screen.getByTestId(`${testId}-email`);
+    fireEvent.change(emailInput, { target: { value: "not-an-email" } });
+    const submitButton = screen.getByText(/Create/);
+    fireEvent.click(submitButton);
+
+    expect(
+      await screen.findByText(/Invalid email address/)
+    ).toBeInTheDocument();
   });
 });
