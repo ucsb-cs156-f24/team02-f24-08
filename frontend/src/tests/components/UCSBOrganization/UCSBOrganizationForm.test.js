@@ -55,7 +55,7 @@ describe("UCSBOrganizationForm tests", () => {
       <QueryClientProvider client={queryClient}>
         <Router>
           <UCSBOrganizationForm
-            initialContents={ucsbOrganizationFixtures.oneOrg[0]}
+            initialContents={ucsbOrganizationFixtures.oneOrganization[0]}
           />
         </Router>
       </QueryClientProvider>,
