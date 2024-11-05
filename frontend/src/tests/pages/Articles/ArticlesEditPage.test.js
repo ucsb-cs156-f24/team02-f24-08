@@ -1,4 +1,3 @@
-
 import { render, screen } from "@testing-library/react";
 import ArticlesEditPage from "main/pages/Articles/ArticlesEditPage";
 import { QueryClient, QueryClientProvider } from "react-query";

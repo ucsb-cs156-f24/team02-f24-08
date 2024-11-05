@@ -35,14 +35,14 @@ describe("ArticlesIndexPage tests", () => {
         <MemoryRouter>
           <ArticlesIndexPage />
         </MemoryRouter>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     await screen.findByText("Index page not yet implemented");
 
     // assert
     expect(
-      screen.getByText("Index page not yet implemented")
+      screen.getByText("Index page not yet implemented"),
     ).toBeInTheDocument();
     expect(screen.getByText("Create")).toBeInTheDocument();
     expect(screen.getByText("Edit")).toBeInTheDocument();
