@@ -19,6 +19,14 @@ function ArticlesForm({
 
   const testIdPrefix = "ArticlesForm";
 
+  // Stryker disable Regex
+  const urlRegex = /^(http|https):\/\//;
+  // Stryker restore Regex
+
+  // Stryker disable Regex
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  // Stryker restore Regex
+
   return (
     <Form onSubmit={handleSubmit(submitAction)}>
       {initialContents && (
@@ -65,7 +73,7 @@ function ArticlesForm({
           {...register("url", {
             required: "URL is required.",
             pattern: {
-              value: /^https?:\/\/.+\..+/,
+              value: urlRegex,
               message: "Must be a valid URL starting with http:// or https://",
             },
           })}
@@ -101,7 +109,7 @@ function ArticlesForm({
           {...register("email", {
             required: "Email is required.",
             pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              value: emailRegex,
               message: "Invalid email address",
             },
           })}

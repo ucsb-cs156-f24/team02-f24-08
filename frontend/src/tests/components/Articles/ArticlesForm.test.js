@@ -34,6 +34,19 @@ describe("ArticlesForm tests", () => {
       const header = screen.getByText(headerText);
       expect(header).toBeInTheDocument();
     });
+
+    expect(screen.getByTestId(`${testId}-explanation`)).toHaveAttribute(
+      "data-testid",
+      `${testId}-explanation`,
+    );
+    expect(screen.getByTestId(`${testId}-dateAdded`)).toHaveAttribute(
+      "data-testid",
+      `${testId}-dateAdded`,
+    );
+    expect(screen.getByTestId(`${testId}-submit`)).toHaveAttribute(
+      "data-testid",
+      `${testId}-submit`,
+    );
   });
 
   test("renders correctly when passing in initialContents", async () => {
