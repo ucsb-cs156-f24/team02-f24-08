@@ -43,7 +43,7 @@ describe("ArticlesTable tests", () => {
         <MemoryRouter>
           <ArticlesTable articles={[]} currentUser={currentUser} />
         </MemoryRouter>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     expectedHeaders.forEach((headerText) => {
@@ -53,7 +53,7 @@ describe("ArticlesTable tests", () => {
 
     expectedFields.forEach((field) => {
       const fieldElement = screen.queryByTestId(
-        `${testId}-cell-row-0-col-${field}`
+        `${testId}-cell-row-0-col-${field}`,
       );
       expect(fieldElement).not.toBeInTheDocument();
     });
@@ -70,7 +70,7 @@ describe("ArticlesTable tests", () => {
             currentUser={currentUser}
           />
         </MemoryRouter>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     expectedHeaders.forEach((headerText) => {
@@ -84,20 +84,20 @@ describe("ArticlesTable tests", () => {
     });
 
     expect(screen.getByTestId(`${testId}-cell-row-0-col-id`)).toHaveTextContent(
-      "2"
+      "2",
     );
     expect(
-      screen.getByTestId(`${testId}-cell-row-0-col-name`)
+      screen.getByTestId(`${testId}-cell-row-0-col-name`),
     ).toHaveTextContent("The Best Restaurant in Goleta");
 
     const editButton = screen.getByTestId(
-      `${testId}-cell-row-0-col-Edit-button`
+      `${testId}-cell-row-0-col-Edit-button`,
     );
     expect(editButton).toBeInTheDocument();
     expect(editButton).toHaveClass("btn-primary");
 
     const deleteButton = screen.getByTestId(
-      `${testId}-cell-row-0-col-Delete-button`
+      `${testId}-cell-row-0-col-Delete-button`,
     );
     expect(deleteButton).toBeInTheDocument();
     expect(deleteButton).toHaveClass("btn-danger");
@@ -114,7 +114,7 @@ describe("ArticlesTable tests", () => {
             currentUser={currentUser}
           />
         </MemoryRouter>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     expectedHeaders.forEach((headerText) => {
@@ -142,25 +142,25 @@ describe("ArticlesTable tests", () => {
             currentUser={currentUser}
           />
         </MemoryRouter>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     expect(
-      await screen.findByTestId(`${testId}-cell-row-0-col-id`)
+      await screen.findByTestId(`${testId}-cell-row-0-col-id`),
     ).toHaveTextContent("2");
     expect(
-      screen.getByTestId(`${testId}-cell-row-0-col-name`)
+      screen.getByTestId(`${testId}-cell-row-0-col-name`),
     ).toHaveTextContent("The Best Restaurant in Goleta");
 
     const editButton = screen.getByTestId(
-      `${testId}-cell-row-0-col-Edit-button`
+      `${testId}-cell-row-0-col-Edit-button`,
     );
     expect(editButton).toBeInTheDocument();
 
     fireEvent.click(editButton);
 
     await waitFor(() =>
-      expect(mockedNavigate).toHaveBeenCalledWith("/articles/edit/2")
+      expect(mockedNavigate).toHaveBeenCalledWith("/articles/edit/2"),
     );
   });
 
@@ -180,18 +180,18 @@ describe("ArticlesTable tests", () => {
             currentUser={currentUser}
           />
         </MemoryRouter>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     expect(
-      await screen.findByTestId(`${testId}-cell-row-0-col-id`)
+      await screen.findByTestId(`${testId}-cell-row-0-col-id`),
     ).toHaveTextContent("2");
     expect(
-      screen.getByTestId(`${testId}-cell-row-0-col-name`)
+      screen.getByTestId(`${testId}-cell-row-0-col-name`),
     ).toHaveTextContent("The Best Restaurant in Goleta");
 
     const deleteButton = screen.getByTestId(
-      `${testId}-cell-row-0-col-Delete-button`
+      `${testId}-cell-row-0-col-Delete-button`,
     );
     expect(deleteButton).toBeInTheDocument();
 
