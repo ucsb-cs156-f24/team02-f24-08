@@ -25,7 +25,7 @@ describe("ArticlesForm tests", () => {
         <Router>
           <ArticlesForm />
         </Router>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     expect(await screen.findByText(/Create/)).toBeInTheDocument();
@@ -42,7 +42,7 @@ describe("ArticlesForm tests", () => {
         <Router>
           <ArticlesForm initialContents={articlesFixtures.oneArticle[0]} />
         </Router>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     expect(await screen.findByText(/Create/)).toBeInTheDocument();
@@ -62,7 +62,7 @@ describe("ArticlesForm tests", () => {
         <Router>
           <ArticlesForm />
         </Router>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
     expect(await screen.findByTestId(`${testId}-cancel`)).toBeInTheDocument();
     const cancelButton = screen.getByTestId(`${testId}-cancel`);
@@ -78,7 +78,7 @@ describe("ArticlesForm tests", () => {
         <Router>
           <ArticlesForm />
         </Router>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     expect(await screen.findByText(/Create/)).toBeInTheDocument();
@@ -88,7 +88,7 @@ describe("ArticlesForm tests", () => {
     expect(await screen.findByText(/Name is required/)).toBeInTheDocument();
     expect(await screen.findByText(/URL is required/)).toBeInTheDocument();
     expect(
-      await screen.findByText(/Explanation is required/)
+      await screen.findByText(/Explanation is required/),
     ).toBeInTheDocument();
     expect(await screen.findByText(/Email is required/)).toBeInTheDocument();
     expect(await screen.findByText(/Date is required/)).toBeInTheDocument();
@@ -100,7 +100,7 @@ describe("ArticlesForm tests", () => {
         <Router>
           <ArticlesForm />
         </Router>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     const nameInput = screen.getByTestId(`${testId}-name`);
@@ -109,7 +109,7 @@ describe("ArticlesForm tests", () => {
     fireEvent.click(submitButton);
 
     expect(
-      await screen.findByText(/Max length 100 characters/)
+      await screen.findByText(/Max length 100 characters/),
     ).toBeInTheDocument();
   });
 
@@ -119,7 +119,7 @@ describe("ArticlesForm tests", () => {
         <Router>
           <ArticlesForm />
         </Router>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     const urlInput = screen.getByTestId(`${testId}-url`);
@@ -129,8 +129,8 @@ describe("ArticlesForm tests", () => {
 
     expect(
       await screen.findByText(
-        /Must be a valid URL starting with http:\/\/ or https:\/\//
-      )
+        /Must be a valid URL starting with http:\/\/ or https:\/\//,
+      ),
     ).toBeInTheDocument();
   });
 
@@ -140,7 +140,7 @@ describe("ArticlesForm tests", () => {
         <Router>
           <ArticlesForm />
         </Router>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     const emailInput = screen.getByTestId(`${testId}-email`);
@@ -149,7 +149,7 @@ describe("ArticlesForm tests", () => {
     fireEvent.click(submitButton);
 
     expect(
-      await screen.findByText(/Invalid email address/)
+      await screen.findByText(/Invalid email address/),
     ).toBeInTheDocument();
   });
 });
