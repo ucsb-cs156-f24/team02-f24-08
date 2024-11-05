@@ -5,7 +5,7 @@ import UCSBDiningCommonsMenuItemIndexPage from "main/pages/UCSBDiningCommonsMenu
 
 import { apiCurrentUserFixtures } from "fixtures/currentUserFixtures";
 import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
-import { ucsbDiningCommonsMenuItemFixtures } from "fixtures/ucsbDiningCommonsMenuItemFixtures"; 
+import { ucsbDiningCommonsMenuItemFixtures } from "fixtures/ucsbDiningCommonsMenuItemFixtures";
 import axios from "axios";
 import AxiosMockAdapter from "axios-mock-adapter";
 import mockConsole from "jest-mock-console";
@@ -64,7 +64,9 @@ describe("UCSBDiningCommonsMenuItemIndexPage tests", () => {
 
     // assert
     await waitFor(() => {
-      expect(screen.getByText(/Create UCSBDiningCommonsMenuItem/)).toBeInTheDocument();
+      expect(
+        screen.getByText(/Create UCSBDiningCommonsMenuItem/),
+      ).toBeInTheDocument();
     });
     const button = screen.getByText(/Create UCSBDiningCommonsMenuItem/);
     expect(button).toHaveAttribute("href", "/ucsbdiningcommonsmenuitem/create");
@@ -102,7 +104,9 @@ describe("UCSBDiningCommonsMenuItemIndexPage tests", () => {
     );
 
     // assert that the Create button is not present when user isn't an admin
-    expect(screen.queryByText(/Create UCSBDiningCommonsMenuItem/)).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(/Create UCSBDiningCommonsMenuItem/),
+    ).not.toBeInTheDocument();
   });
 
   test("renders empty table when backend unavailable, user only", async () => {
@@ -178,8 +182,9 @@ describe("UCSBDiningCommonsMenuItemIndexPage tests", () => {
 
     // assert
     await waitFor(() => {
-      expect(mockToast).toBeCalledWith("UCSBDiningCommonsMenuItem with id 1 was deleted");
+      expect(mockToast).toBeCalledWith(
+        "UCSBDiningCommonsMenuItem with id 1 was deleted",
+      );
     });
   });
 });
-
