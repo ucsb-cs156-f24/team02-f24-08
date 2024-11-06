@@ -82,12 +82,14 @@ function HelpRequestForm({
             </Form.Control.Feedback>
           </Form.Group>
         </Col>
-        </Row>
+      </Row>
 
-        <Row>
+      <Row>
         <Col>
           <Form.Group className="mb-3">
-            <Form.Label htmlFor="tableOrBreakoutRoom">Table or Breakout Room</Form.Label>
+            <Form.Label htmlFor="tableOrBreakoutRoom">
+              Table or Breakout Room
+            </Form.Label>
             <Form.Control
               data-testid="HelpRequestForm-tableOrBreakoutRoom"
               id="tableOrBreakoutRoom"
@@ -146,14 +148,13 @@ function HelpRequestForm({
               type="string"
               isInvalid={Boolean(errors.solved)}
               {...register("solved")}
-              >
+            >
               <option value="false">False</option>
               <option value="true">True</option>
-              </Form.Select>
+            </Form.Select>
           </Form.Group>
         </Col>
       </Row>
-
 
       <Row>
         <Col>
