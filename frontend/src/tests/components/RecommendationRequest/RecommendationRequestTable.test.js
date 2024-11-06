@@ -204,6 +204,9 @@ describe("UserTable tests", () => {
       expect(
         screen.getByTestId(`RecommendationRequestTable-cell-row-0-col-id`),
       ).toHaveTextContent("1");
+      expect(
+        screen.getByTestId(`RecommendationRequestTable-cell-row-0-col-Done`),
+      ).toHaveTextContent("false");
     });
 
     const deleteButton = screen.getByTestId(
