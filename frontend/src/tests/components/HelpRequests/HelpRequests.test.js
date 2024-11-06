@@ -39,12 +39,14 @@ describe("HelpRequestForm tests", () => {
       </Router>,
     );
     await screen.findByTestId("HelpRequestForm-requesterEmail");
-    const requesterEmailField = screen.getByTestId("HelpRequestForm-requesterEmail");
+    const requesterEmailField = screen.getByTestId(
+      "HelpRequestForm-requesterEmail",
+    );
     const teamIdField = screen.getByTestId("HelpRequestForm-teamId");
     const solvedField = screen.getByTestId("HelpRequestForm-solved");
     const submitButton = screen.getByTestId("HelpRequestForm-submit");
 
-    fireEvent.change(requesterEmailField, {target: { value: "hsgd"}}); 
+    fireEvent.change(requesterEmailField, { target: { value: "hsgd" } });
     fireEvent.change(teamIdField, { target: { value: "bad-input" } });
     fireEvent.change(solvedField, { target: { value: "bad-input" } });
     fireEvent.click(submitButton);

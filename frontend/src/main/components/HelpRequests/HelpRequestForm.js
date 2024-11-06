@@ -29,7 +29,6 @@ function HelpRequestForm({
   const mailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   // Stryker restore Regex
 
-  
   // Stryker disable next-line all
   //const yyyyq_regex = /((19)|(20))\d{2}[1-4]/i; // Accepts from 1900-2099 followed by 1-4.  Close enough.
 
@@ -63,8 +62,11 @@ function HelpRequestForm({
               {...register("requesterEmail", {
                 required: "Requester email is required.",
                 validate: (requesterEmail) => {
-                  return mailRegex.test(requesterEmail) || "Please enter a valid email."; 
-                }
+                  return (
+                    mailRegex.test(requesterEmail) ||
+                    "Please enter a valid email."
+                  );
+                },
               })}
             />
             <Form.Control.Feedback type="invalid">
@@ -84,8 +86,11 @@ function HelpRequestForm({
               {...register("teamId", {
                 required: "Team ID is required.",
                 validate: (teamId) => {
-                  return Number.isInteger(Number(teamId)) || "Team ID must be an integer."
-                }
+                  return (
+                    Number.isInteger(Number(teamId)) ||
+                    "Team ID must be an integer."
+                  );
+                },
               })}
             />
             <Form.Control.Feedback type="invalid">
