@@ -25,6 +25,11 @@ function HelpRequestForm({
     /(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d)/i;
   // Stryker restore Regex
 
+  // Stryker disable Regex
+  const mailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // Stryker restore Regex
+
+  
   // Stryker disable next-line all
   //const yyyyq_regex = /((19)|(20))\d{2}[1-4]/i; // Accepts from 1900-2099 followed by 1-4.  Close enough.
 
@@ -57,6 +62,9 @@ function HelpRequestForm({
               isInvalid={Boolean(errors.requesterEmail)}
               {...register("requesterEmail", {
                 required: "Requester email is required.",
+                validate: (requesterEmail) => {
+                  return mailRegex.test(requesterEmail) || "Please enter a valid email."; 
+                }
               })}
             />
             <Form.Control.Feedback type="invalid">
@@ -75,6 +83,9 @@ function HelpRequestForm({
               isInvalid={Boolean(errors.teamId)}
               {...register("teamId", {
                 required: "Team ID is required.",
+                validate: (teamId) => {
+                  return Number.isInteger(Number(teamId)) || "Team ID must be an integer."
+                }
               })}
             />
             <Form.Control.Feedback type="invalid">
@@ -90,15 +101,16 @@ function HelpRequestForm({
             <Form.Label htmlFor="tableOrBreakoutRoom">
               Table or Breakout Room
             </Form.Label>
-            <Form.Control
+            <Form.Select
               data-testid="HelpRequestForm-tableOrBreakoutRoom"
               id="tableOrBreakoutRoom"
               type="text"
               isInvalid={Boolean(errors.tableOrBreakoutRoom)}
-              {...register("tableOrBreakoutRoom", {
-                required: "Table or breakout room is required.",
-              })}
-            />
+              {...register("tableOrBreakoutRoom")}
+            >
+              <option value="breakout">Breakout</option>
+              <option value="table">Table</option>
+            </Form.Select>
             <Form.Control.Feedback type="invalid">
               {errors.tableOrBreakoutRoom?.message}
             </Form.Control.Feedback>

@@ -39,15 +39,18 @@ describe("HelpRequestForm tests", () => {
       </Router>,
     );
     await screen.findByTestId("HelpRequestForm-requesterEmail");
+    const requesterEmailField = screen.getByTestId("HelpRequestForm-requesterEmail");
     const teamIdField = screen.getByTestId("HelpRequestForm-teamId");
     const solvedField = screen.getByTestId("HelpRequestForm-solved");
     const submitButton = screen.getByTestId("HelpRequestForm-submit");
 
+    fireEvent.change(requesterEmailField, {target: { value: "hsgd"}}); 
     fireEvent.change(teamIdField, { target: { value: "bad-input" } });
     fireEvent.change(solvedField, { target: { value: "bad-input" } });
     fireEvent.click(submitButton);
 
-    await screen.findByText(/Requester email is required./);
+    await screen.findByText(/Please enter a valid email./);
+    await screen.findByText(/Team ID must be an integer./);
   });
 
   test("Correct Error messsages on missing input", async () => {
@@ -63,9 +66,6 @@ describe("HelpRequestForm tests", () => {
 
     await screen.findByText(/Requester email is required./);
     expect(screen.getByText(/Team ID is required./)).toBeInTheDocument();
-    expect(
-      screen.getByText(/Table or breakout room is required./),
-    ).toBeInTheDocument();
     expect(screen.getByText(/Time is required./)).toBeInTheDocument();
     expect(screen.getByText(/Explanation is required./)).toBeInTheDocument();
   });
@@ -95,7 +95,7 @@ describe("HelpRequestForm tests", () => {
     fireEvent.change(requesterEmailField, {
       target: { value: "someone@ucsb.edu" },
     });
-    fireEvent.change(teamIdField, { target: { value: "team-01" } });
+    fireEvent.change(teamIdField, { target: { value: "1" } });
     fireEvent.change(tableOrBreakoutRoomField, {
       target: { value: "breakout" },
     });
