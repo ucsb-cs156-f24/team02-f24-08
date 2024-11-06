@@ -80,8 +80,8 @@ function UCSBOrganizationForm({
           isInvalid={Boolean(errors.inactive)}
           {...register("inactive")}
         >
-        <option value="active">active</option>
-        <option value="inactive">inactive</option>
+          <option value="active">active</option>
+          <option value="inactive">inactive</option>
         </Form.Select>
       </Form.Group>
 
