@@ -7,13 +7,11 @@ function UCSBOrganizationForm({
   submitAction,
   buttonLabel = "Create",
 }) {
-  // Stryker disable all
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm({ defaultValues: initialContents || {} });
-  // Stryker restore all
 
   const navigate = useNavigate();
 
@@ -21,23 +19,21 @@ function UCSBOrganizationForm({
 
   return (
     <Form onSubmit={handleSubmit(submitAction)}>
-      {initialContents && (
-        <Form.Group className="mb-3">
-          <Form.Label htmlFor="orgCode">Organization Code</Form.Label>
-          <Form.Control
-            data-testid={testIdPrefix + "-orgCode"}
-            id="orgCode"
-            type="text"
-            isInvalid={Boolean(errors.orgCode)}
-            {...register("orgCode", {
-              required: "Organization Code is required.",
-            })}
-          />
-          <Form.Control.Feedback type="invalid">
-            {errors.orgCode?.message}
-          </Form.Control.Feedback>
-        </Form.Group>
-      )}
+      <Form.Group className="mb-3">
+        <Form.Label htmlFor="orgCode">Organization Code</Form.Label>
+        <Form.Control
+          data-testid={testIdPrefix + "-orgCode"}
+          id="orgCode"
+          type="text"
+          isInvalid={Boolean(errors.orgCode)}
+          {...register("orgCode", {
+            required: "Organization Code is required.",
+          })}
+        />
+        <Form.Control.Feedback type="invalid">
+          {errors.orgCode?.message}
+        </Form.Control.Feedback>
+      </Form.Group>
 
       <Form.Group className="mb-3">
         <Form.Label htmlFor="orgTranslationShort">
@@ -81,12 +77,13 @@ function UCSBOrganizationForm({
 
       <Form.Group className="mb-3">
         <Form.Label htmlFor="inactive">Inactive</Form.Label>
-        <Form.Check
+        <Form.Select
           data-testid={testIdPrefix + "inactive"}
           id="inactive"
-          type="checkbox"
           isInvalid={Boolean(errors.inactive)}
-          {...register("inactive")}
+          {...register("inactive", {
+            required: "Status is required.",
+          })}
         />
       </Form.Group>
 
