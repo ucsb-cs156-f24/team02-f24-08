@@ -2,7 +2,7 @@ const helpRequestFixtures = {
   oneHelpRequest: {
     id: 1,
     requesterEmail: "divyanipunj@ucsb.edu",
-    teamId: "team-08",
+    teamId: "8",
     tableOrBreakoutRoom: "breakout",
     requestTime: "2022-01-02T12:00:00",
     explanation: "Issues with Swagger.",
@@ -12,7 +12,7 @@ const helpRequestFixtures = {
     {
       id: 2,
       requesterEmail: "chaewonbang@ucsb.edu",
-      teamId: "team-15",
+      teamId: "15",
       tableOrBreakoutRoom: "breakout",
       requestTime: "2022-01-02T12:00:00",
       explanation: "Issues with divyani.",
@@ -21,7 +21,7 @@ const helpRequestFixtures = {
     {
       id: 3,
       requesterEmail: "somestudent@ucsb.edu",
-      teamId: "team-01",
+      teamId: "1",
       tableOrBreakoutRoom: "table",
       requestTime: "2022-01-02T12:00:00",
       explanation: "Dokku problems.",
@@ -30,7 +30,7 @@ const helpRequestFixtures = {
     {
       id: 4,
       requesterEmail: "anotherstudent@ucsb.edu",
-      teamId: "team-07",
+      teamId: "7",
       tableOrBreakoutRoom: "table",
       requestTime: "2022-01-02T12:00:00",
       explanation: "Issue with Storybook.",
