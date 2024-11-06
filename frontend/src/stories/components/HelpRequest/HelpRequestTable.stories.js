@@ -16,7 +16,7 @@ const Template = (args) => {
 export const Empty = Template.bind({});
 
 Empty.args = {
-    helpRequests: [],
+  helpRequests: [],
 };
 
 export const ThreeItemsOrdinaryUser = Template.bind({});
@@ -28,7 +28,7 @@ ThreeItemsOrdinaryUser.args = {
 
 export const ThreeItemsAdminUser = Template.bind({});
 ThreeItemsAdminUser.args = {
-    helpRequests: helpRequestFixtures.threeHelpRequests,
+  helpRequests: helpRequestFixtures.threeHelpRequests,
   currentUser: currentUserFixtures.adminUser,
 };
 
