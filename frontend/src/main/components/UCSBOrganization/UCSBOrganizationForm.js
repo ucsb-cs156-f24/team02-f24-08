@@ -46,8 +46,7 @@ function UCSBOrganizationForm({
           isInvalid={Boolean(errors.orgTranslationShort)}
           {...register("orgTranslationShort", {
             required: "Organization Translation Short is required.",
-            maxLength: {
-            },
+            maxLength: {},
           })}
         />
         <Form.Control.Feedback type="invalid">
