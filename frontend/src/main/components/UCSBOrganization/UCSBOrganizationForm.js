@@ -47,8 +47,6 @@ function UCSBOrganizationForm({
           {...register("orgTranslationShort", {
             required: "Organization Translation Short is required.",
             maxLength: {
-              value: 30,
-              message: "Max length 30 characters",
             },
           })}
         />
@@ -81,9 +79,7 @@ function UCSBOrganizationForm({
           data-testid={testIdPrefix + "inactive"}
           id="inactive"
           isInvalid={Boolean(errors.inactive)}
-          {...register("inactive", {
-            required: "Status is required.",
-          })}
+          {...register("inactive")}
         />
       </Form.Group>
 
