@@ -222,7 +222,9 @@ describe("HelpRequestCreatePage tests", () => {
     const teamIdInput = screen.getByLabelText("Team ID");
     expect(teamIdInput).toBeInTheDocument();
 
-    const tableOrBreakoutRoomInput = screen.getByLabelText("Table or Breakout Room");
+    const tableOrBreakoutRoomInput = screen.getByLabelText(
+      "Table or Breakout Room",
+    );
     expect(tableOrBreakoutRoomInput).toBeInTheDocument();
 
     const requestTimeInput = screen.getByLabelText("Date (iso format)");
@@ -237,9 +239,13 @@ describe("HelpRequestCreatePage tests", () => {
     const createButton = screen.getByText("Create");
     expect(createButton).toBeInTheDocument();
 
-    fireEvent.change(requesterEmailInput, { target: { value: "requesterEmail@gmail.com" } });
+    fireEvent.change(requesterEmailInput, {
+      target: { value: "requesterEmail@gmail.com" },
+    });
     fireEvent.change(teamIdInput, { target: { value: "5" } });
-    fireEvent.change(tableOrBreakoutRoomInput, { target: { value: "breakout" } });
+    fireEvent.change(tableOrBreakoutRoomInput, {
+      target: { value: "breakout" },
+    });
     fireEvent.change(requestTimeInput, {
       target: { value: "2022-02-02T00:00" },
     });
