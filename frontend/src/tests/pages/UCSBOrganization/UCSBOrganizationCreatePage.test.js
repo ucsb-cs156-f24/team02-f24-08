@@ -142,7 +142,6 @@ describe("UCSBOrganizationCreatePage tests", () => {
     axiosMock
       .onPost("/api/ucsborganizations/post")
       .reply(200, test_organization);
-
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
