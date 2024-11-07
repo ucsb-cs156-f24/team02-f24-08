@@ -5,7 +5,7 @@ import HelpRequestIndexPage from "main/pages/HelpRequests/HelpRequestIndexPage";
 
 import { apiCurrentUserFixtures } from "fixtures/currentUserFixtures";
 import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
-import { helpRequestFixtures} from "fixtures/helpRequestFixtures";
+import { helpRequestFixtures } from "fixtures/helpRequestFixtures";
 import axios from "axios";
 import AxiosMockAdapter from "axios-mock-adapter";
 import mockConsole from "jest-mock-console";
@@ -182,4 +182,3 @@ describe("HelpRequestIndexPage tests", () => {
     });
   });
 });
-
