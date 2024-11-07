@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f24/team02-f24-08
 owner: ucsb-cs156-f24
 repo_name: team02-f24-08
-pull_requests: [{"author":{"id":"U_kgDOCu01tQ","is_bot":false,"login":"divyanipunj","name":""},"headRefName":"dp-HelpRequest-copyPlaceHolders","number":99,"title":"Dp - help request copy place holders","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/99"}]
+pull_requests: [{"author":{"id":"U_kgDOCMNTCg","is_bot":false,"login":"Mike-Petrus","name":""},"headRefName":"Mike-RecommendationRequest-appNavBar","number":100,"title":"Mike-Copy Placeholders for RecommendationRequest pages; add to App.js/AppNavbar.js","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/100"},{"author":{"id":"U_kgDOCu01tQ","is_bot":false,"login":"divyanipunj","name":""},"headRefName":"dp-HelpRequest-copyPlaceHolders","number":99,"title":"Dp - help request copy place holders","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/99"}]
