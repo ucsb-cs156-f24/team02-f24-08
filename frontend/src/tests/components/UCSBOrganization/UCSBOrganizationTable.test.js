@@ -4,6 +4,9 @@ import UCSBOrganizationTable from "main/components/UCSBOrganization/UCSBOrganiza
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 import { currentUserFixtures } from "fixtures/currentUserFixtures";
+import { onDeleteSuccess } from "main/utils/UCSBOrganizationUtils";
+import { toast } from "react-toastify";
+import { cellToAxiosParamsDelete } from "main/utils/UCSBOrganizationUtils";
 import axios from "axios";
 import AxiosMockAdapter from "axios-mock-adapter";
 
@@ -323,5 +326,30 @@ describe("UCSBOrganizationTable tests", () => {
     expect(
       screen.getByTestId("OrganizationTable-cell-row-1-col-inactive"),
     ).toHaveTextContent("False");
+  });
+
+  test("onDeleteSuccess logs and shows toast message", () => {
+    const message = "Organization deleted successfully";
+
+    // Mock console.log
+    console.log = jest.fn();
+
+    onDeleteSuccess(message);
+
+    expect(console.log).toHaveBeenCalledWith(message);
+    expect(toast).toHaveBeenCalledWith(message);
+  });
+
+  test("cellToAxiosParamsDelete returns correct axios params", () => {
+    const cell = { row: { values: { orgCode: "CSB" } } };
+    const result = cellToAxiosParamsDelete(cell);
+
+    expect(result).toEqual({
+      url: "/api/organizations",
+      method: "DELETE",
+      params: {
+        orgCode: "CSB",
+      },
+    });
   });
 });
