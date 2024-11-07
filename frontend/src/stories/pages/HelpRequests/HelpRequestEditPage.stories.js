@@ -4,10 +4,10 @@ import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
 import { helpRequestFixtures } from "fixtures/helpRequestFixtures";
 import { http, HttpResponse } from "msw";
 
-import HelpRequestEditPage from "main/pages/HelpRequest/HelpRequestEditPage";
+import HelpRequestEditPage from "main/pages/HelpRequests/HelpRequestEditPage";
 
 export default {
-  title: "pages/HelpRequest/HelpRequestEditPage",
+  title: "pages/HelpRequests/HelpRequestEditPage",
   component: HelpRequestEditPage,
 };
 
