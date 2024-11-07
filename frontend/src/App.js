@@ -66,12 +66,12 @@ function App() {
             <Route
               exact
               path="/helprequests/edit/:id"
-              element={<HelpRequestCreatePage />}
+              element={<HelpRequestEditPage />}
             />
             <Route
               exact
               path="/helprequests/create"
-              element={<HelpRequestEditPage />}
+              element={<HelpRequestCreatePage />}
             />
           </>
         )}
