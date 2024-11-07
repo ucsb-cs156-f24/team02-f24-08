@@ -68,7 +68,5 @@ export default function ArticlesTable({
     );
   }
 
-  console.log({ articles, columns, testIdPrefix });
-
   return <OurTable data={articles} columns={columns} testid={testIdPrefix} />;
 }

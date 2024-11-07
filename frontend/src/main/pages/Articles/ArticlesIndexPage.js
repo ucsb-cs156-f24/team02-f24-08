@@ -35,7 +35,6 @@ export default function ArticlesIndexPage() {
     }
   };
 
-  console.log({ articles, currentUser });
   return (
     <BasicLayout>
       <div className="pt-2">
