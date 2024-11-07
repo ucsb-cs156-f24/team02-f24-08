@@ -73,7 +73,7 @@ describe("ArticlesIndexPage tests", () => {
     setupUserOnly();
     axiosMock
       .onGet("/api/articles/all")
-      .reply(200, articlesFixtures.threeArticles);
+      .reply(200, articlesFixtures.threeRestaurants);
 
     render(
       <QueryClientProvider client={queryClient}>
