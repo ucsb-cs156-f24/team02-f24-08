@@ -4,7 +4,7 @@ const ucsbOrganizationFixtures = {
       orgCode: "DSC",
       orgTranslationShort: "Data Science Club",
       orgTranslation: "UCSB Data Science Club",
-      inactive: true,
+      inactive: false,
     },
   ],
 
