@@ -111,5 +111,6 @@ describe("UCSBOrganizationForm tests", () => {
     expect(
       screen.getByText(/Organization Translation is required./),
     ).toBeInTheDocument();
+    expect(screen.getByText(/Inactive is required./)).toBeInTheDocument();
   });
 });
