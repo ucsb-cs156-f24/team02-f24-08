@@ -141,7 +141,7 @@ describe("ArticlesIndexPage tests", () => {
 
     axiosMock
       .onGet("/api/articles/all")
-      .reply(200, articlesFixtures.threeArticles);
+      .reply(200, articlesFixtures.threeRestaurants);
     axiosMock
       .onDelete("/api/articles")
       .reply(200, "Article with id 2 was deleted");

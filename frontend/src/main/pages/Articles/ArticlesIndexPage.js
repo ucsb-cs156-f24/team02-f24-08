@@ -18,7 +18,7 @@ export default function ArticlesIndexPage() {
     ["/api/articles/all"],
     { method: "GET", url: "/api/articles/all" },
     // Stryker disable next-line all : don't test default value of empty list
-    [],
+    []
   );
 
   const createButton = () => {
@@ -35,6 +35,7 @@ export default function ArticlesIndexPage() {
     }
   };
 
+  console.log({ articles, currentUser });
   return (
     <BasicLayout>
       <div className="pt-2">
