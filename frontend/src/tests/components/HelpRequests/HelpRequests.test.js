@@ -52,7 +52,7 @@ describe("HelpRequestForm tests", () => {
     fireEvent.click(submitButton);
 
     await screen.findByText(/Please enter a valid email./);
-    await screen.findByText(/Team ID must be an integer./);
+    await screen.findByText(/Team ID must be a positive integer./);
   });
 
   test("Correct Error messsages on missing input", async () => {

@@ -11,14 +11,13 @@ import RestaurantIndexPage from "main/pages/Restaurants/RestaurantIndexPage";
 import RestaurantCreatePage from "main/pages/Restaurants/RestaurantCreatePage";
 import RestaurantEditPage from "main/pages/Restaurants/RestaurantEditPage";
 
-import HelpRequestIndexPage from "main/pages/HelpRequests/HelpRequestIndexPage";
-import HelpRequestCreatePage from "main/pages/HelpRequests/HelpRequestCreatePage";
-import HelpRequestEditPage from "main/pages/HelpRequests/HelpRequestEditPage";
-
-
 import PlaceholderIndexPage from "main/pages/Placeholder/PlaceholderIndexPage";
 import PlaceholderCreatePage from "main/pages/Placeholder/PlaceholderCreatePage";
 import PlaceholderEditPage from "main/pages/Placeholder/PlaceholderEditPage";
+
+import HelpRequestIndexPage from "main/pages/HelpRequests/HelpRequestIndexPage";
+import HelpRequestCreatePage from "main/pages/HelpRequests/HelpRequestCreatePage";
+import HelpRequestEditPage from "main/pages/HelpRequests/HelpRequestEditPage";
 
 import { hasRole, useCurrentUser } from "main/utils/currentUser";
 
@@ -102,15 +101,27 @@ function App() {
           </>
         )}
         {hasRole(currentUser, "ROLE_USER") && (
-        <>
-          <Route exact path="/helprequests" element={<HelpRequestIndexPage />} />
-        </>)
-        }
+          <>
+            <Route
+              exact
+              path="/helprequests"
+              element={<HelpRequestIndexPage />}
+            />
+          </>
+        )}
         {hasRole(currentUser, "ROLE_ADMIN") && (
-        <>
-          <Route exact path="/helprequests/edit/:id" element={<HelpRequestEditPage />} />
-          <Route exact path="/helprequests/create" element={<HelpRequestCreatePage />} />
-        </>
+          <>
+            <Route
+              exact
+              path="/helprequests/edit/:id"
+              element={<HelpRequestEditPage />}
+            />
+            <Route
+              exact
+              path="/helprequests/create"
+              element={<HelpRequestCreatePage />}
+            />
+          </>
         )}
       </Routes>
     </BrowserRouter>

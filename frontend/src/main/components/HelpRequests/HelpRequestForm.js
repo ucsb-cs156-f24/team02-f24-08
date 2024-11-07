@@ -86,10 +86,10 @@ function HelpRequestForm({
               {...register("teamId", {
                 required: "Team ID is required.",
                 validate: (teamId) => {
-                  return (
-                    Number.isInteger(Number(teamId)) ||
-                    "Team ID must be an integer."
-                  );
+                  return(
+                    //(Number.isInteger(Number(teamId)) && (Number(teamId) > 0)) ||  "Team ID must be a positive integer."
+                    Number.isInteger(Number(teamId)) || "Team ID must be a positive integer."
+                  ); 
                 },
               })}
             />
