@@ -6,7 +6,7 @@ import { http, HttpResponse } from "msw";
 import HelpRequestCreatePage from "main/pages/HelpRequests/HelpRequestCreatePage";
 
 export default {
-  title: "pages/HelpRequest/HelpRequestCreatePage",
+  title: "pages/HelpRequests/HelpRequestCreatePage",
   component: HelpRequestCreatePage,
 };
 
