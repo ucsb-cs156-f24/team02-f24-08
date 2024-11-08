@@ -75,7 +75,7 @@ function UCSBOrganizationForm({
       <Form.Group className="mb-3">
         <Form.Label htmlFor="inactive">Inactive</Form.Label>
         <Form.Select
-          data-testid={testIdPrefix + "inactive"}
+          data-testid={testIdPrefix + "-inactive"}
           id="inactive"
           isInvalid={Boolean(errors.inactive)}
           {...register("inactive", {
