@@ -2,7 +2,7 @@ const articlesFixtures = {
   oneArticle: [
     {
       id: 1,
-      name: "The Best Restaurant in Isla Vista",
+      title: "The Best Restaurant in Isla Vista",
       url: "https://www.yelp.com/biz/woodstocks-pizza-isla-vista",
       explanation: "Woodstock's Pizza is the best restaurant in Isla Vista.",
       email: "reviews@yelp.com",
@@ -10,10 +10,10 @@ const articlesFixtures = {
     },
   ],
 
-  threeRestaurants: [
+  threeArticles: [
     {
       id: 2,
-      name: "The Best Restaurant in Goleta",
+      title: "The Best Restaurant in Goleta",
       url: "https://www.yelp.com/biz/frog-bar-and-grill-goleta",
       explanation: "Frog Bar and Grill is the best restaurant in Goleta.",
       email: "reviews@yelp.com",
@@ -22,7 +22,7 @@ const articlesFixtures = {
 
     {
       id: 3,
-      name: "The Best Restaurant in Santa Barbara",
+      title: "The Best Restaurant in Santa Barbara",
       url: "https://www.yelp.com/biz/la-super-rica-taqueria-santa-barbara",
       explanation:
         "La Super Rica Taqueria is the best restaurant in Santa Barbara.",
@@ -32,7 +32,7 @@ const articlesFixtures = {
 
     {
       id: 4,
-      name: "The Best Restaurant in Montecito",
+      title: "The Best Restaurant in Montecito",
       url: "https://www.yelp.com/biz/jeannines-restaurant-and-bakery-montecito",
       explanation:
         "Jeannine's Restaurant and Bakery is the best restaurant in Montecito.",

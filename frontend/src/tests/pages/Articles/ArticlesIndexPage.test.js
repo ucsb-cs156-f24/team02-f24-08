@@ -73,7 +73,7 @@ describe("ArticlesIndexPage tests", () => {
     setupUserOnly();
     axiosMock
       .onGet("/api/articles/all")
-      .reply(200, articlesFixtures.threeRestaurants);
+      .reply(200, articlesFixtures.threeArticles);
 
     render(
       <QueryClientProvider client={queryClient}>
@@ -141,7 +141,7 @@ describe("ArticlesIndexPage tests", () => {
 
     axiosMock
       .onGet("/api/articles/all")
-      .reply(200, articlesFixtures.threeRestaurants);
+      .reply(200, articlesFixtures.threeArticles);
     axiosMock
       .onDelete("/api/articles")
       .reply(200, "Article with id 2 was deleted");
