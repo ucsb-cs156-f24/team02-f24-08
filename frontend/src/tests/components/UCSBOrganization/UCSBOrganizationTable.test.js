@@ -251,7 +251,7 @@ describe("UCSBOrganizationTable tests", () => {
 
     const axiosMock = new AxiosMockAdapter(axios);
     axiosMock
-      .onDelete("/api/organizations")
+      .onDelete("/api/ucsborganization")
       .reply(200, { message: "Organization deleted successfully" });
 
     // act - render the component
@@ -345,7 +345,7 @@ describe("UCSBOrganizationTable tests", () => {
     const result = cellToAxiosParamsDelete(cell);
 
     expect(result).toEqual({
-      url: "/api/organizations",
+      url: "/api/ucsborganization",
       method: "DELETE",
       params: {
         orgCode: "CSB",
