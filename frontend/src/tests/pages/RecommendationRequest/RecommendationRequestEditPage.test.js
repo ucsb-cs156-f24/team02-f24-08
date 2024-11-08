@@ -235,6 +235,7 @@ describe("RecommendationRequestEditPage tests", () => {
         JSON.stringify({
           requesterEmail: "bigyang@ucsb.edu",
           professorEmail: "mike.petrus@ucsb.edu",
+          explanation: "Chancellor Recommendation",
           dateRequested: "2024-11-14T15:00",
           dateNeeded: "2025-04-20T15:00",
           done: "false",
