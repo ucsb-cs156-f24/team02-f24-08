@@ -64,7 +64,9 @@ describe("ArticlesEditPage tests", () => {
         </QueryClientProvider>,
       );
       await screen.findByText("Edit Article");
-      expect(screen.queryByTestId("ArticlesForm-name")).not.toBeInTheDocument();
+      expect(
+        screen.queryByTestId("ArticlesForm-title"),
+      ).not.toBeInTheDocument();
       restoreConsole();
     });
   });
@@ -83,7 +85,7 @@ describe("ArticlesEditPage tests", () => {
         .reply(200, systemInfoFixtures.showingNeither);
       axiosMock.onGet("/api/articles", { params: { id: 17 } }).reply(200, {
         id: 17,
-        name: "Sample Article",
+        title: "Sample Article",
         url: "https://example.org",
         explanation: "Sample explanation",
         email: "sample@example.org",
@@ -91,7 +93,7 @@ describe("ArticlesEditPage tests", () => {
       });
       axiosMock.onPut("/api/articles").reply(200, {
         id: "17",
-        name: "Updated Article",
+        title: "Updated Article",
         url: "https://updated.org",
         explanation: "Updated explanation",
         email: "updated@example.org",
@@ -109,7 +111,7 @@ describe("ArticlesEditPage tests", () => {
         </QueryClientProvider>,
       );
 
-      await screen.findByTestId("ArticlesForm-name");
+      await screen.findByTestId("ArticlesForm-title");
     });
 
     test("Is populated with the data provided", async () => {
@@ -121,10 +123,10 @@ describe("ArticlesEditPage tests", () => {
         </QueryClientProvider>,
       );
 
-      await screen.findByTestId("ArticlesForm-name");
+      await screen.findByTestId("ArticlesForm-title");
 
       const idField = screen.getByTestId("ArticlesForm-id");
-      const nameField = screen.getByTestId("ArticlesForm-name");
+      const nameField = screen.getByTestId("ArticlesForm-title");
       const urlField = screen.getByTestId("ArticlesForm-url");
       const explanationField = screen.getByTestId("ArticlesForm-explanation");
       const emailField = screen.getByTestId("ArticlesForm-email");
@@ -149,10 +151,10 @@ describe("ArticlesEditPage tests", () => {
         </QueryClientProvider>,
       );
 
-      await screen.findByTestId("ArticlesForm-name");
+      await screen.findByTestId("ArticlesForm-title");
 
       const idField = screen.getByTestId("ArticlesForm-id");
-      const nameField = screen.getByTestId("ArticlesForm-name");
+      const nameField = screen.getByTestId("ArticlesForm-title");
       const urlField = screen.getByTestId("ArticlesForm-url");
       const explanationField = screen.getByTestId("ArticlesForm-explanation");
       const emailField = screen.getByTestId("ArticlesForm-email");
@@ -184,7 +186,7 @@ describe("ArticlesEditPage tests", () => {
 
       await waitFor(() => expect(mockToast).toBeCalled());
       expect(mockToast).toBeCalledWith(
-        "Article Updated - id: 17 name: Updated Article",
+        "Article Updated - id: 17 title: Updated Article",
       );
       expect(mockNavigate).toBeCalledWith({ to: "/articles" });
 
@@ -192,7 +194,7 @@ describe("ArticlesEditPage tests", () => {
       expect(axiosMock.history.put[0].params).toEqual({ id: 17 });
       expect(axiosMock.history.put[0].data).toBe(
         JSON.stringify({
-          name: "Updated Article",
+          title: "Updated Article",
           url: "https://updated.org",
           explanation: "Updated explanation",
           email: "updated@example.org",

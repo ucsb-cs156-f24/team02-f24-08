@@ -32,7 +32,7 @@ export default function ArticlesEditPage({ storybook = false }) {
       id: article.id,
     },
     data: {
-      name: article.name,
+      title: article.title,
       url: article.url,
       explanation: article.explanation,
       email: article.email,
@@ -41,7 +41,7 @@ export default function ArticlesEditPage({ storybook = false }) {
   });
 
   const onSuccess = (article) => {
-    toast(`Article Updated - id: ${article.id} name: ${article.name}`);
+    toast(`Article Updated - id: ${article.id} title: ${article.title}`);
   };
 
   const mutation = useBackendMutation(
