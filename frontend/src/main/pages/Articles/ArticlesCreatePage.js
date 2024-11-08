@@ -9,7 +9,7 @@ export default function ArticlesCreatePage({ storybook = false }) {
     url: "/api/articles/post",
     method: "POST",
     params: {
-      name: article.name,
+      title: article.title,
       url: article.url,
       explanation: article.explanation,
       email: article.email,
@@ -18,7 +18,7 @@ export default function ArticlesCreatePage({ storybook = false }) {
   });
 
   const onSuccess = (article) => {
-    toast(`New article Created - id: ${article.id} name: ${article.name}`);
+    toast(`New article Created - id: ${article.id} title: ${article.title}`);
   };
 
   const mutation = useBackendMutation(

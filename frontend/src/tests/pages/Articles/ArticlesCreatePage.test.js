@@ -56,7 +56,7 @@ describe("ArticlesCreatePage tests", () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByTestId("ArticlesForm-name")).toBeInTheDocument();
+      expect(screen.getByTestId("ArticlesForm-title")).toBeInTheDocument();
     });
   });
 
@@ -64,7 +64,7 @@ describe("ArticlesCreatePage tests", () => {
     const queryClient = new QueryClient();
     const article = {
       id: 17,
-      name: "Sample Article",
+      title: "Sample Article",
       url: "https://example.com",
       explanation: "This is a sample article",
       email: "sample@ucsb.edu",
@@ -82,10 +82,10 @@ describe("ArticlesCreatePage tests", () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByTestId("ArticlesForm-name")).toBeInTheDocument();
+      expect(screen.getByTestId("ArticlesForm-title")).toBeInTheDocument();
     });
 
-    const nameField = screen.getByTestId("ArticlesForm-name");
+    const nameField = screen.getByTestId("ArticlesForm-title");
     const urlField = screen.getByTestId("ArticlesForm-url");
     const explanationField = screen.getByTestId("ArticlesForm-explanation");
     const emailField = screen.getByTestId("ArticlesForm-email");
@@ -107,7 +107,7 @@ describe("ArticlesCreatePage tests", () => {
     await waitFor(() => expect(axiosMock.history.post.length).toBe(1));
 
     expect(axiosMock.history.post[0].params).toEqual({
-      name: "Sample Article",
+      title: "Sample Article",
       url: "https://example.com",
       explanation: "This is a sample article",
       email: "sample@ucsb.edu",
@@ -115,7 +115,7 @@ describe("ArticlesCreatePage tests", () => {
     });
 
     expect(mockToast).toBeCalledWith(
-      "New article Created - id: 17 name: Sample Article",
+      "New article Created - id: 17 title: Sample Article",
     );
     expect(mockNavigate).toBeCalledWith({ to: "/articles" });
   });

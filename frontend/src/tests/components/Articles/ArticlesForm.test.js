@@ -16,7 +16,13 @@ jest.mock("react-router-dom", () => ({
 describe("ArticlesForm tests", () => {
   const queryClient = new QueryClient();
 
-  const expectedHeaders = ["Name", "URL", "Explanation", "Email", "Date Added"];
+  const expectedHeaders = [
+    "Title",
+    "URL",
+    "Explanation",
+    "Email",
+    "Date Added",
+  ];
   const testId = "ArticlesForm";
 
   test("renders correctly with no initialContents", async () => {
@@ -98,7 +104,7 @@ describe("ArticlesForm tests", () => {
     const submitButton = screen.getByText(/Create/);
     fireEvent.click(submitButton);
 
-    expect(await screen.findByText(/Name is required/)).toBeInTheDocument();
+    expect(await screen.findByText(/Title is required/)).toBeInTheDocument();
     expect(await screen.findByText(/URL is required/)).toBeInTheDocument();
     expect(
       await screen.findByText(/Explanation is required/),
@@ -107,7 +113,7 @@ describe("ArticlesForm tests", () => {
     expect(await screen.findByText(/Date is required/)).toBeInTheDocument();
   });
 
-  test("that name length validation works", async () => {
+  test("that title length validation works", async () => {
     render(
       <QueryClientProvider client={queryClient}>
         <Router>
@@ -116,7 +122,7 @@ describe("ArticlesForm tests", () => {
       </QueryClientProvider>,
     );
 
-    const nameInput = screen.getByTestId(`${testId}-name`);
+    const nameInput = screen.getByTestId(`${testId}-title`);
     fireEvent.change(nameInput, { target: { value: "a".repeat(101) } });
     const submitButton = screen.getByText(/Create/);
     fireEvent.click(submitButton);
