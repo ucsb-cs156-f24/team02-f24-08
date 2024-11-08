@@ -34,7 +34,7 @@ export default function RecommendationRequestEditPage({ storybook = false }) {
     data: {
       requesterEmail: recommendationRequest.requesterEmail,
       professorEmail: recommendationRequest.professorEmail,
-      explanation: recommendationRequest.explnation,
+      explanation: recommendationRequest.explanation,
       dateRequested: recommendationRequest.dateRequested,
       dateNeeded: recommendationRequest.dateNeeded,
       done: recommendationRequest.done,
