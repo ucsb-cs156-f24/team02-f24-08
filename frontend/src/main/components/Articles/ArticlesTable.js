@@ -40,8 +40,8 @@ export default function ArticlesTable({
       accessor: "id", // accessor is the "key" in the data
     },
     {
-      Header: "Name",
-      accessor: "name",
+      Header: "Title",
+      accessor: "title",
     },
     {
       Header: "URL",

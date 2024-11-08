@@ -19,7 +19,7 @@ describe("ArticlesTable tests", () => {
 
   const expectedHeaders = [
     "id",
-    "Name",
+    "Title",
     "URL",
     "Explanation",
     "Email",
@@ -27,7 +27,7 @@ describe("ArticlesTable tests", () => {
   ];
   const expectedFields = [
     "id",
-    "name",
+    "title",
     "url",
     "explanation",
     "email",
@@ -66,7 +66,7 @@ describe("ArticlesTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <ArticlesTable
-            articles={articlesFixtures.threeRestaurants}
+            articles={articlesFixtures.threeArticles}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -87,7 +87,7 @@ describe("ArticlesTable tests", () => {
       "2",
     );
     expect(
-      screen.getByTestId(`${testId}-cell-row-0-col-name`),
+      screen.getByTestId(`${testId}-cell-row-0-col-title`),
     ).toHaveTextContent("The Best Restaurant in Goleta");
 
     const editButton = screen.getByTestId(
@@ -110,7 +110,7 @@ describe("ArticlesTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <ArticlesTable
-            articles={articlesFixtures.threeRestaurants}
+            articles={articlesFixtures.threeArticles}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -138,7 +138,7 @@ describe("ArticlesTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <ArticlesTable
-            articles={articlesFixtures.threeRestaurants}
+            articles={articlesFixtures.threeArticles}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -149,7 +149,7 @@ describe("ArticlesTable tests", () => {
       await screen.findByTestId(`${testId}-cell-row-0-col-id`),
     ).toHaveTextContent("2");
     expect(
-      screen.getByTestId(`${testId}-cell-row-0-col-name`),
+      screen.getByTestId(`${testId}-cell-row-0-col-title`),
     ).toHaveTextContent("The Best Restaurant in Goleta");
 
     const editButton = screen.getByTestId(
@@ -176,7 +176,7 @@ describe("ArticlesTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <ArticlesTable
-            articles={articlesFixtures.threeRestaurants}
+            articles={articlesFixtures.threeArticles}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -187,7 +187,7 @@ describe("ArticlesTable tests", () => {
       await screen.findByTestId(`${testId}-cell-row-0-col-id`),
     ).toHaveTextContent("2");
     expect(
-      screen.getByTestId(`${testId}-cell-row-0-col-name`),
+      screen.getByTestId(`${testId}-cell-row-0-col-title`),
     ).toHaveTextContent("The Best Restaurant in Goleta");
 
     const deleteButton = screen.getByTestId(
