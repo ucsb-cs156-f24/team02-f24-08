@@ -25,7 +25,7 @@ export default function OrganizationTable({
   const deleteMutation = useBackendMutation(
     cellToAxiosParamsDelete,
     { onSuccess: onDeleteSuccess },
-    ["/api/organizations/all"],
+    ["/api/ucsborganization/all"],
   );
   // Stryker restore all
 
