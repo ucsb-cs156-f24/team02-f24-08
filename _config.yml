@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f24/team02-f24-08
 owner: ucsb-cs156-f24
 repo_name: team02-f24-08
-pull_requests: [{"author":{"id":"U_kgDOCMNTCg","is_bot":false,"login":"Mike-Petrus","name":""},"headRefName":"Mike-RecommendationRequest-e2eTest","number":131,"title":"Mike-RecommendationRequest e2e test","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/131"},{"author":{"id":"MDQ6VXNlcjY4MDg2NzYw","is_bot":false,"login":"yw2398","name":"Amber Wang"},"headRefName":"AW-EditPage-UCSBOrgs","number":123,"title":"AW-editPage-UCSBOrgs","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/123"}]
+pull_requests: [{"author":{"id":"MDQ6VXNlcjY4MDg2NzYw","is_bot":false,"login":"yw2398","name":"Amber Wang"},"headRefName":"AW-EditPage-UCSBOrgs","number":123,"title":"AW-editPage-UCSBOrgs","url":"https://github.com/ucsb-cs156-f24/team02-f24-08/pull/123"}]
