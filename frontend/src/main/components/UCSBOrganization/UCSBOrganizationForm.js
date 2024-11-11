@@ -6,6 +6,7 @@ function UCSBOrganizationForm({
   initialContents,
   submitAction,
   buttonLabel = "Create",
+  isEdit = false,
 }) {
   const {
     register,
@@ -26,6 +27,7 @@ function UCSBOrganizationForm({
           id="orgCode"
           type="text"
           isInvalid={Boolean(errors.orgCode)}
+          disabled={isEdit}
           {...register("orgCode", {
             required: "Organization Code is required.",
           })}
