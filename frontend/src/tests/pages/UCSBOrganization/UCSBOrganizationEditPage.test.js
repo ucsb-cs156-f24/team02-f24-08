@@ -198,7 +198,7 @@ describe("UCSBOrganizationEditPage tests", () => {
         orgTranslation: "Coders SB Programming Club",
         inactive: false,
       });
-    
+
       // Act
       render(
         <QueryClientProvider client={queryClient}>
@@ -207,14 +207,15 @@ describe("UCSBOrganizationEditPage tests", () => {
           </MemoryRouter>
         </QueryClientProvider>,
       );
-    
+
       // Assert
       await waitFor(() => {
-        expect(screen.getByTestId("UCSBOrganizationForm-orgCode")).toBeInTheDocument();
+        expect(
+          screen.getByTestId("UCSBOrganizationForm-orgCode"),
+        ).toBeInTheDocument();
       });
       const orgCodeField = screen.getByTestId("UCSBOrganizationForm-orgCode");
       expect(orgCodeField).toHaveAttribute("disabled"); // Check if it's disabled
     });
-    
   });
 });
