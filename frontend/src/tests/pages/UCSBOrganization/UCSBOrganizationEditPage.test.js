@@ -187,5 +187,34 @@ describe("UCSBOrganizationEditPage tests", () => {
         }),
       ); // posted object
     });
+
+    test("orgCode field is disabled in edit mode", async () => {
+      // Arrange
+      const queryClient = new QueryClient();
+      axiosMock.reset();
+      axiosMock.onGet("/api/ucsborganization").reply(200, {
+        orgCode: "CSB",
+        orgTranslationShort: "Coders SB",
+        orgTranslation: "Coders SB Programming Club",
+        inactive: false,
+      });
+    
+      // Act
+      render(
+        <QueryClientProvider client={queryClient}>
+          <MemoryRouter>
+            <UCSBOrganizationEditPage />
+          </MemoryRouter>
+        </QueryClientProvider>,
+      );
+    
+      // Assert
+      await waitFor(() => {
+        expect(screen.getByTestId("UCSBOrganizationForm-orgCode")).toBeInTheDocument();
+      });
+      const orgCodeField = screen.getByTestId("UCSBOrganizationForm-orgCode");
+      expect(orgCodeField).toHaveAttribute("disabled"); // Check if it's disabled
+    });
+    
   });
 });
