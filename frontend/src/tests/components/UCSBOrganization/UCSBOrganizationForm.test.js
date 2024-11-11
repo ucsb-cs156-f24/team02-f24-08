@@ -40,7 +40,7 @@ describe("UCSBOrganizationForm tests", () => {
     });
 
     // Check the inactive checkbox and other form fields using correct data-testid values
-    expect(screen.getByTestId(`${testId}inactive`)).toBeInTheDocument();
+    expect(screen.getByTestId(`${testId}-inactive`)).toBeInTheDocument();
     expect(screen.getByTestId(`${testId}-orgCode`)).toBeInTheDocument();
     expect(
       screen.getByTestId(`${testId}-orgTranslationShort`),
