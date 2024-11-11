@@ -44,14 +44,14 @@ function ArticlesForm({
       )}
 
       <Form.Group className="mb-3">
-        <Form.Label htmlFor="name">Name</Form.Label>
+        <Form.Label htmlFor="title">Title</Form.Label>
         <Form.Control
-          data-testid={testIdPrefix + "-name"}
-          id="name"
+          data-testid={testIdPrefix + "-title"}
+          id="title"
           type="text"
-          isInvalid={Boolean(errors.name)}
-          {...register("name", {
-            required: "Name is required.",
+          isInvalid={Boolean(errors.title)}
+          {...register("title", {
+            required: "Title is required.",
             maxLength: {
               value: 100,
               message: "Max length 100 characters",
@@ -59,7 +59,7 @@ function ArticlesForm({
           })}
         />
         <Form.Control.Feedback type="invalid">
-          {errors.name?.message}
+          {errors.title?.message}
         </Form.Control.Feedback>
       </Form.Group>
 
